@@ -14,6 +14,7 @@ let getDocuments = async (req, res) => {
 
 let CreateDocument = async (req, res) => {
     let LocalBody = req.body;
+    console.log("--------------",LocalBody);
 
     await CommonToDataFolder.StartFunc({
         inFolderName: "Loans",
