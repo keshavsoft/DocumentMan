@@ -105,7 +105,7 @@ let jFClickName2Id = () => {
             let jVarLocalName1 = localStorage.getItem("Name2Id");
             jVarLocalName1Id.innerHTML = jVarLocalName1;
 
-          
+
         }
     })
 };
@@ -183,6 +183,29 @@ let jFClickDateId = () => {
 
 };
 
+let jFClickSave = async () => {
+
+    let jVarLocalFetchUrl = "/DocumentMan/Documents";
+    let jVarLocalData = localStorage.getItem("BranchId");
+    console.log("jVarLocalData : ", jVarLocalData);
+
+    const settings = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(JSON.parse(jVarLocalData))
+    };
+
+    let response = await fetch(jVarLocalFetchUrl, settings);
+    let data = await response.text();
+    console.log("ssssssssss : ", data);
+    //return data;
+    console.log("Save--------------");
+
+};
+
 
 
 
@@ -191,5 +214,5 @@ export {
     jFClickNameId, jFClickPurposeId,
     jFClickName1Id, jFClickName2Id,
     jFClickVillageId, jFClickLandId,
-    jFClickName3Id, jFClickDateId
+    jFClickName3Id, jFClickDateId, jFClickSave
 }
