@@ -25,8 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({ limit: '100mb' }));
 
 app.get('/', function (req, res, next) {
-    console.log("ssssssss : ", process.env.NODE_ENV);
-    res.sendFile(path.join(__dirname + `/Html/JSONProject.html`));
+    res.status(301).redirect("./Documents/Document8.html")
 });
 
 app.use(`/${commonProjectNameForDocumentMan}`, SubRouteDocumentMan);
