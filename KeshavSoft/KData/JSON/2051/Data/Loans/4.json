@@ -1,0 +1,25 @@
+{
+    "DocumentsInfo": {
+        "1": {
+            "DocumentNo": "1",
+            "DocumentDate": "2",
+            "NatureDocument": "3",
+            "CopyXerox": "4",
+            "PageNo": "5"
+        },
+        "2": {
+            "DocumentNo": "a",
+            "DocumentDate": "b",
+            "NatureDocument": "c",
+            "CopyXerox": "d",
+            "PageNo": "e"
+        },
+        "3": {
+            "DocumentNo": "b",
+            "DocumentDate": "n",
+            "NatureDocument": "n",
+            "CopyXerox": "n",
+            "PageNo": "n"
+        }
+    }
+}
