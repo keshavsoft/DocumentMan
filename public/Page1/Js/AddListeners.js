@@ -1,13 +1,9 @@
-import {jFClickDateId   } from "./ClickFuncs";
-import {  } from ".";
+import {
+    jFClickBranchId, jFClickNumberId, jFClickNameId, jFClickPurposeId, jFClickName1Id, 
+    jFClickName2Id,jFClickVillageId, jFClickLandId, jFClickName3Id, jFClickDateId
+} from "./ClickFuncs.js";
 
-let StartFunc = () => {
-    let jVarLocalsaveClick = document.getElementById("PageSave");
 
-    jVarLocalsaveClick.addEventListener("click", SaveClickFunc);
-
-    // document.addEventListener("DOMContentLoaded", FromHbs);
-};
 
 let jFAddListeners = () => {
     let jVarLocalBranchId = document.getElementById("BranchId");
@@ -46,4 +42,4 @@ let jFAddListeners = () => {
 
 
 
-export { StartFunc, jFAddListeners}
+export { jFAddListeners }
