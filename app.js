@@ -3,6 +3,8 @@ let CommonProjectNameForJSONApi = "JSONApi";
 let CommonProjectNameForJSONAdminApi = "JSONAdminApi";
 let commonProjectNameForJSONUser = "JSONUser";
 let commonProjectNameForDocumentMan = "DocumentMan";
+let commonProjectNameForPage1 = "Page1";
+
 
 const express = require('express');
 var path = require('path');
@@ -18,6 +20,7 @@ var port = normalizePort(process.env.PORT || '4119');
 //let SubRouteJSONAdminApi = require(`./Projects/${CommonProjectNameForJSONAdminApi}/Routes`);
 //let SubRouteJSONUser = require(`./Projects/${commonProjectNameForJSONUser}/Routes`);
 let SubRouteDocumentMan = require(`./Projects/${commonProjectNameForDocumentMan}/Routes`);
+let SubRoutePage1 = require(`./Projects/${commonProjectNameForPage1}/Routes`);
 
 app.use(cookieParser());
 
@@ -29,6 +32,8 @@ app.get('/', function (req, res, next) {
 });
 
 app.use(`/${commonProjectNameForDocumentMan}`, SubRouteDocumentMan);
+app.use(`/${commonProjectNameForPage1}`, SubRoutePage1);
+
 //app.use("/JSONUser", SubRouteJSONUser);
 //app.use("/JSONApi", cors({ origin: '*' }), SubRouteJSONProject);
 //app.use(`/${CommonProjectName}`, SubRouteJSONReports);
