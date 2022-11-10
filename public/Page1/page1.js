@@ -1,3 +1,3 @@
-import { StartFunc  } from "./Js/AddListeners.js";
+import { jFAddListeners  } from "./Js/AddListeners.js";
 
-StartFunc();
+jFAddListeners();
