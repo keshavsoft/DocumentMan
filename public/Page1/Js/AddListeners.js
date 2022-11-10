@@ -1,8 +1,8 @@
 import {
-    jFClickBranchId, jFClickNumberId, jFClickNameId, jFClickPurposeId, jFClickName1Id, 
-    jFClickName2Id,jFClickVillageId, jFClickLandId, jFClickName3Id, jFClickDateId,jFClickSave
+    jFClickBranchId, jFClickNumberId, jFClickNameId, jFClickPurposeId, jFClickName1Id,
+    jFClickName2Id, jFClickVillageId, jFClickLandId, jFClickName3Id, jFClickDateId
 } from "./ClickFuncs.js";
-
+import { FetchPost } from "./SaveFuncs.js";
 
 
 let jFAddListeners = () => {
@@ -38,7 +38,7 @@ let jFAddListeners = () => {
     jVarLocalDateId.addEventListener("click", jFClickDateId);
 
     let jVarLocalSave = document.getElementById("PageSave");
-    jVarLocalSave.addEventListener("click", jFClickSave);
+    jVarLocalSave.addEventListener("click", FetchPost);
 
 
 };
