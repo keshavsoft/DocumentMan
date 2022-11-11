@@ -1,14 +1,33 @@
-
 let FromHbs = async () => {
-    let jVarLocalTableBodyId = document.getElementById("ButtonsId");
+    let jVarLocalFetchHtml = "/DocumentMan/Loans/Table.html"
 
-    let jVarLocalData = localStorage.getItem("Document");
-    const response = await fetch('Button.html');
+    const response = await fetch(jVarLocalFetchHtml);
     const movies = await response.text();
+    return await movies;
 
-    var template = Handlebars.compile(movies);
-
-    jVarLocalTableBodyId.innerHTML = template(JSON.parse(jVarLocalData));
 };
 
-export { FromHbs }
+let FromData = async () => {
+    let jVarLocalFetchUrl = "/DocumentMan/Loans";
+    let responseFormData = await fetch(jVarLocalFetchUrl);
+    let data = await responseFormData.json();
+
+
+    return await data;
+
+};
+
+let StartFunc = async () => {
+    let jVarLocalTbody = document.getElementById("TableBodyId");
+    let jVarLocalHbas = await FromHbs();
+    let jVarLocalData = await FromData();
+
+    var template = Handlebars.compile(jVarLocalHbas);
+
+    let jVarLocalTemplate = template(jVarLocalData);
+    jVarLocalTbody.innerHTML = jVarLocalTemplate
+
+
+};
+
+export { StartFunc }
