@@ -1,0 +1,7 @@
+let StartFunc = () => {
+
+
+};
+
+
+export { StartFunc }
