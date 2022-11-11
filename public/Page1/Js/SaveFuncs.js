@@ -1,5 +1,5 @@
 let FetchPost = async () => {
-    let jVarLocalFetchUrl = "DocumentMan/Page1";
+    let jVarLocalFetchUrl = "/DocumentMan/Page1";
     
     let jVarLocalData = localStorage.getItem("BranchId");
     let jVarLocalName = localStorage.getItem("Name");
@@ -10,8 +10,6 @@ let FetchPost = async () => {
     let jVarLocalVillage = localStorage.getItem("Village");
     let jVarLocalName2Id = localStorage.getItem("Name2Id");
     let jVarLocalName1 = localStorage.getItem("Name1");
-
-    console.log("jVarLocalData : ", jVarLocalData);
 
     const settings = {
         method: 'POST',
