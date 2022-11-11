@@ -3,10 +3,17 @@ let CommonDataSupply = require("../../../DataSupply/Fs/Config/Folders/PullData/F
 
 let getLoans = async (req, res) => {
     let LocalFromCommonFromDataSupply = await CommonDataSupply.StartFunc({
-        inDataPK:2051, 
-        inFolderName:"Loans"
+        inDataPK: 2051,
+        inFolderName: "Loans"
     });
-    res.json(LocalFromCommonFromDataSupply);
+
+    if (LocalFromCommonFromDataSupply.KTF === false) {
+        res.end(LocalFromCommonFromDataSupply.KReson)
+    };
+
+    res.json(LocalFromCommonFromDataSupply.KResult);
+
+
     // console.log("LocalFromCommonFromDataSupply---",LocalFromCommonFromDataSupply);
 
 };
