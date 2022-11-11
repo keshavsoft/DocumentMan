@@ -1,5 +1,5 @@
 let FetchPost = async () => {
-    let jVarLocalFetchUrl = "/Page1/Page1";
+    let jVarLocalFetchUrl = "DocumentMan/Page1";
     
     let jVarLocalData = localStorage.getItem("BranchId");
     let jVarLocalName = localStorage.getItem("Name");
@@ -34,10 +34,11 @@ let FetchPost = async () => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
+    console.log("response",jVarLocalFetchUrl);
     let data = await response.text();
     console.log("ssssssssss : ", data);
     //return data;
-    console.log("Save--------------");
+    console.log("Save-----lll---------");
 
 };
 
