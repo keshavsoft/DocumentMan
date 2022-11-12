@@ -5,7 +5,6 @@ let FromHbs = async () => {
     const response = await fetch(jVarLocalFetchHtml);
     const movies = await response.text();
     return await movies;
-
 };
 
 let FromData = async () => {
@@ -17,8 +16,6 @@ let FromData = async () => {
     return await data;
 
 };
-
-
 
 let StartFunc = async () => {
     let jVarLocalTbody = document.getElementById("TableBodyId");
