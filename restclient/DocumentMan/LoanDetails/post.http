@@ -1,0 +1,6 @@
+POST http://localhost:4151/DocumentMan/LoanDetails
+content-type: application/json
+ 
+{   
+ "inFileName":"8.json"
+}
