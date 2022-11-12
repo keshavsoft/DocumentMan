@@ -17,6 +17,8 @@ let FromData = async () => {
 
 };
 
+
+
 let StartFunc = async () => {
     let jVarLocalTbody = document.getElementById("TableBodyId");
     let jVarLocalHbas = await FromHbs();
