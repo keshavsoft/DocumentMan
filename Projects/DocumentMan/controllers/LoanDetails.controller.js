@@ -9,13 +9,10 @@ let getLoansDetails = async (req, res) => {
         inFolderName: "Loans",
         inFileNameWithExtension: jVarLocalInfileName
     });
-    console.log("LocalFromCommonFromDataSupply-----", LocalFromCommonFromDataSupply);
+   
 
-    if (LocalFromCommonFromDataSupply.KTF === false) {
-        res.end(LocalFromCommonFromDataSupply.KReson)
-    };
-
-    res.json(LocalFromCommonFromDataSupply.JsonData);
+    res.json(LocalFromCommonFromDataSupply.KResult);
+    console.log("LocalFromCommonFromDataSupply.KResult---",LocalFromCommonFromDataSupply.KResult);
 };
 
 module.exports = { getLoansDetails };
