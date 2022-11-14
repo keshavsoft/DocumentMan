@@ -19,7 +19,7 @@ let StartFuncShow = async () => {
             console.log("jvarFileName----------------------------");
 
             // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
-            document.location=`../Page/page1Show.html?DocumentNumber=${jvarFileName}`
+            document.location = `../Page/page1Show.html?DocumentNumber=${jvarFileName}`
 
 
             console.log("llllllllllll--", jvarFileName);
@@ -30,4 +30,4 @@ let StartFuncShow = async () => {
 
 
 
-export { StartFunc,StartFuncShow }
+export { StartFunc, StartFuncShow }
