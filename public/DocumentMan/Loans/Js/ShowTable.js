@@ -1,4 +1,5 @@
 import { StartFunc as AddListenersStartFunc } from "./AddListeners.js";
+//import { StartFuncShow } from "../../Documents/Js/AddListeners.js";
 
 let FromHbs = async () => {
     let jVarLocalFetchHtml = "/DocumentMan/Loans/Table.html"
@@ -28,6 +29,7 @@ let StartFunc = async () => {
     jVarLocalTbody.innerHTML = jVarLocalTemplate;
 
     AddListenersStartFunc();
+//    StartFuncShow()
 };
 
 export { StartFunc }
