@@ -1,0 +1,6 @@
+POST http://localhost:4151/DocumentMan/DocumentDetails
+content-type: application/json
+ 
+{   
+ "inFileName":"24.json"
+}
