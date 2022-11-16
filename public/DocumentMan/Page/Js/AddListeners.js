@@ -1,11 +1,20 @@
 import {
-    jFClickBranchId, jFClickNumberId, jFClickNameId, jFClickPurposeId, jFClickName1Id,
-    jFClickName2Id, jFClickVillageId, jFClickLandId, jFClickName3Id, jFClickDateId
+    jFClickDate, jFClickBranchId, 
+    jFClickNumberId, jFClickNameId, 
+    jFClickPurposeId, jFClickName1Id,
+    jFClickName2Id, jFClickVillageId, 
+    jFClickLandId, jFClickName3Id, 
+    jFClickServeyNo1, jFClickServeyNo2, 
+    jFClickServeyNo3, jFClickServeyNo4,
+    jFClickServeyNoTotal
 } from "./ClickFuncs.js";
 import { FetchPost as SaveFuncsFetchPost } from "./SaveFuncs.js";
 
 
 let jFAddListeners = () => {
+    let jVarLocalDate = document.getElementById("DateId");
+    jVarLocalDate.addEventListener("click", jFClickDate);
+
     let jVarLocalBranchId = document.getElementById("BranchId");
     jVarLocalBranchId.addEventListener("click", jFClickBranchId);
 
@@ -34,11 +43,27 @@ let jFAddListeners = () => {
     let jVarLocalName3Id = document.getElementById("Name3Id");
     jVarLocalName3Id.addEventListener("click", jFClickName3Id);
 
-    let jVarLocalDateId = document.getElementById("DateId");
-    jVarLocalDateId.addEventListener("click", jFClickDateId);
+    let jVarLocalServeyNo1 = document.getElementById("ServeyNo1");
+    jVarLocalServeyNo1.addEventListener("click", jFClickServeyNo1);
+
+    let jVarLocalServeyNo2 = document.getElementById("ServeyNo2");
+    jVarLocalServeyNo2.addEventListener("click", jFClickServeyNo2);
+
+    let jVarLocalServeyNo3 = document.getElementById("ServeyNo3");
+    jVarLocalServeyNo3.addEventListener("click", jFClickServeyNo3);
+
+    let jVarLocalServeyNo4 = document.getElementById("ServeyNo4");
+    jVarLocalServeyNo4.addEventListener("click", jFClickServeyNo4);
+
+    let jVarLocalServeyNoTotal = document.getElementById("ServeyNoTotal");
+    jVarLocalServeyNoTotal.addEventListener("click", jFClickServeyNoTotal);
+
 
     let jVarLocalSave = document.getElementById("PageSave");
     jVarLocalSave.addEventListener("click", SaveFuncsFetchPost);
+
+
+
 };
 
 

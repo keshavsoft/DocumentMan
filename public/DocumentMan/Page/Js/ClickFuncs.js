@@ -1,3 +1,20 @@
+let jFClickDate = () => {
+    Swal.fire({
+        title: 'Enter Date: ',
+        html: `<input type="date" id="Numbersweet" class="swal2-input" placeholder=" Enter Date "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#Numbersweet').value;
+            let jVarLocalDate = document.getElementById("DateId");
+            localStorage.setItem("DocumentDate", `${FolderName}`);
+            let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
+            jVarLocalDate.innerHTML = jVarLocalDateFromLocalStroge;
+        }
+    })
+
+};
 
 let jFClickBranchId = () => {
     Swal.fire({
@@ -20,7 +37,7 @@ let jFClickBranchId = () => {
 let jFClickNumberId = () => {
     Swal.fire({
         title: 'L.A.No',
-        html: `<input type="text" id="NumberIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="NumberIdsweet" class="swal2-input" placeholder="Enter L.A.No "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -38,7 +55,7 @@ let jFClickNumberId = () => {
 let jFClickNameId = () => {
     Swal.fire({
         title: 'Name of the PACS',
-        html: `<input type="text" id="NameIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="NameIdsweet" class="swal2-input" placeholder="Enter Name of the PACS "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -56,7 +73,7 @@ let jFClickNameId = () => {
 let jFClickPurposeId = () => {
     Swal.fire({
         title: 'Purpose',
-        html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -75,7 +92,7 @@ let jFClickPurposeId = () => {
 let jFClickName1Id = () => {
     Swal.fire({
         title: '3)Who should mortgage the property in favour of the bank in case of sanction of loan',
-        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter FileName "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -165,28 +182,105 @@ let jFClickName3Id = () => {
     })
 
 };
-let jFClickDateId = () => {
+let jFClickServeyNo1 = () => {
     Swal.fire({
-        title: 'Date',
-        html: `<input type="text" DateId="sweet" class="swal2-input" placeholder="Insert FileName "> `,
+        title: 'Name of the Applicant',
+        html: `<input type="text" id="ServeyNo1Idsweet" class="swal2-input" placeholder="Insert FileName "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
         preConfirm: () => {
-            const FolderName = Swal.getPopup().querySelector('#DateIdsweet').value;
-            let jVarLocalDateId = document.getElementById("DateId");
-            localStorage.setItem("DateId", `${FolderName}`);
-            let jVarLocalDate = localStorage.getItem("DateId");
-            jVarLocalDateId.innerHTML = jVarLocalDate;
+            const FolderName = Swal.getPopup().querySelector('#ServeyNo1Idsweet').value;
+            let jVarLocalServeyNo1 = document.getElementById("ServeyNo1");
+            localStorage.setItem("ServeyNo1", `${FolderName}`);
+            let jvarServeyNo1 = localStorage.getItem("ServeyNo1");
+            jVarLocalServeyNo1.innerHTML = jvarServeyNo1;
+
+        }
+    })
+
+};
+let jFClickServeyNo2 = () => {
+    Swal.fire({
+        title: 'Eneter',
+        html: `<input type="text" id="ServeyNo2Idsweet" class="swal2-input" placeholder="Eneter "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#ServeyNo2Idsweet').value;
+            let jVarLocalServeyNo2 = document.getElementById("ServeyNo2");
+            localStorage.setItem("ServeyNo2", `${FolderName}`);
+            let jvarServeyNo2 = localStorage.getItem("ServeyNo2");
+            jVarLocalServeyNo2.innerHTML = jvarServeyNo2;
+
+        }
+    })
+
+};
+let jFClickServeyNo3 = () => {
+    Swal.fire({
+        title: 'Enter',
+        html: `<input type="text" id="ServeyNo3Idsweet" class="swal2-input" placeholder="Enter "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#ServeyNo3Idsweet').value;
+            let jVarLocalServeyNo3 = document.getElementById("ServeyNo3");
+            localStorage.setItem("ServeyNo3", `${FolderName}`);
+            let jvarServeyNo3 = localStorage.getItem("ServeyNo3");
+            jVarLocalServeyNo3.innerHTML = jvarServeyNo3;
+
+        }
+    })
+
+};
+let jFClickServeyNo4 = () => {
+    Swal.fire({
+        title: 'Enter',
+        html: `<input type="text" id="ServeyNo4Idsweet" class="swal2-input" placeholder="Enter "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#ServeyNo4Idsweet').value;
+            let jVarLocalServeyNo4 = document.getElementById("ServeyNo4");
+            localStorage.setItem("ServeyNo4", `${FolderName}`);
+            let jvarServeyNo4 = localStorage.getItem("ServeyNo4");
+            jVarLocalServeyNo4.innerHTML = jvarServeyNo4;
+
+        }
+    })
+
+};
+let jFClickServeyNoTotal = () => {
+    Swal.fire({
+        title: 'Enret Total',
+        html: `<input type="text" id="ServeyNoTotalIdsweet" class="swal2-input" placeholder="Enter Total "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#ServeyNoTotalIdsweet').value;
+            let jVarLocalServeyNoTotal = document.getElementById("ServeyNoTotal");
+            localStorage.setItem("ServeyNoTotal", `${FolderName}`);
+            let jvarServeyNoTotal = localStorage.getItem("ServeyNoTotal");
+            jVarLocalServeyNoTotal.innerHTML = jvarServeyNoTotal;
+
         }
     })
 
 };
 
+
 export {
+    jFClickDate,
     jFClickBranchId, jFClickNumberId,
     jFClickNameId, jFClickPurposeId,
     jFClickName1Id, jFClickName2Id,
     jFClickVillageId, jFClickLandId,
-    jFClickName3Id, jFClickDateId
+    jFClickName3Id, jFClickServeyNo1,
+    jFClickServeyNo2, jFClickServeyNo3,
+    jFClickServeyNo4,jFClickServeyNoTotal
 }
