@@ -1,3 +1,9 @@
-import { StartFunc } from "./Js/AddListeners.js";
+import { getAll as FromLoansgetAll } from "./Js/FromLoans/ShowLoans.js";
 
-StartFunc();
+import { StartFunc as AddListenersStartFunc } from "./Js/AddListeners.js";
+
+FromLoansgetAll().then(PromiseData => {
+    console.log("PromiseData : ", PromiseData);
+});
+
+AddListenersStartFunc();
