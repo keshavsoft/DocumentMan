@@ -6,6 +6,10 @@ let StartFunc = () => {
 
     jVarLocalsaveClick.addEventListener("click", SaveClickFunc);
 
+    let jVarLocalFileToSaveClick = document.getElementById("InfileTosaveId");
+
+    jVarLocalFileToSaveClick.addEventListener("click", SaveClickFunc);
+
     document.addEventListener("DOMContentLoaded", FromHbs);
 };
 

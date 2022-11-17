@@ -1,8 +1,10 @@
 //let CommonDataSupply = require("../../../DataSupply/Fs/Config/Folders/Files/PullData/FromDataFolder/")
 
 let getDocumentDetails = async (req, res) => {
-    let jVarLocalInfileName = req.body.InFileName;
-    console.log("hhhhhhhhhhhhhhhhh",jVarLocalInfileName);
+    let jVarLocalSave = req.body.InToSAve;
+    let jVarLocalInfileName = req.body.InFileName
+    console.log("hhhhhhhhhhhhhhhhh",jVarLocalSave);
+    console.log("----jVarLocalInfileName",jVarLocalInfileName);
 
 
     // let LocalFromCommonFromDataSupply = await CommonDataSupply.FullJsonData({
