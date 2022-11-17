@@ -6,6 +6,9 @@ let SaveClickFunc = async (event) => {
 
     if (jVarLocalFromValidate.KTF) {
         let jVarLocalTableBodyId = document.getElementById("TableBodyId");
+        let jVarLocalInputFileName = document.getElementById("InPutFileName").value;
+        console.log("jVarLocalInputFileName---", jVarLocalInputFileName);
+
 
         let jVarLocalDocumentNo = document.getElementById("DocumentId").value;
         let jVarLocalDocumentDate = document.getElementById("DocumentDateId").value;
@@ -25,22 +28,43 @@ let SaveClickFunc = async (event) => {
 
         ToLocalStorageStartFunc({ inDataToSave: saveData });
         // window.location.href = "";
-        await LocalPostToServer();
+        // await LocalPostToServer();
+        await LocalPostToServerWithFile({ InFileName: jVarLocalInputFileName })
         console.log("jVarLocalFromValidate:------");
     };
 };
 
-let LocalPostToServer = async () => {
+let LocalPostToServer = async ({  }) => {
     let jVarLocalFetchUrl = "/DocumentMan/Documents";
     let jVarLocalData = localStorage.getItem("Document");
     console.log("jVarLocalData : ", jVarLocalData);
+    let LocalSaveData = JSON.parse(jVarLocalData)
     const settings = {
         method: 'POST',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(JSON.parse(jVarLocalData))
+        body: JSON.stringify({ InToSAve: LocalSaveData })
+    };
+
+    let response = await fetch(jVarLocalFetchUrl, settings);
+    let data = await response.text();
+    console.log("ssssssssss : ", data);
+    //return data;
+};
+let LocalPostToServerWithFile = async ({ InFileName }) => {
+    let jVarLocalFetchUrl = "/DocumentMan/LoanDetails/Save";
+    let jVarLocalData = localStorage.getItem("Document");
+    console.log("jVarLocalData : ", jVarLocalData);
+    let LocalSaveData = JSON.parse(jVarLocalData)
+    const settings = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ InToSAve: LocalSaveData, InFileName })
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
