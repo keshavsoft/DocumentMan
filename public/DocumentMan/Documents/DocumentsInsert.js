@@ -5,7 +5,8 @@ import { StartFunc as AddListenersStartFunc } from "./Js/AddListeners.js";
 FromLoansgetAll().then(PromiseData => {
 
     let Datalist = '';
-    let htmlstring = PromiseData.forEach((ListItems) => {
+    
+    PromiseData.forEach((ListItems) => {
         Datalist += '<option value="' + ListItems + '" />';
     });
 
