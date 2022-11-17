@@ -1,5 +1,4 @@
 {{#each this}}
-{{log "this" this}}
 <tr>
     <td>{{@key}}</td>
     <td>
@@ -17,8 +16,12 @@
 
     </td>
     <td>
-        <button type="button" class="btn btn-outline-primary ShowDocumentClass" data-FileName="{{this}}">Documents</button>
-
+        <button type="button" class="btn btn-outline-primary InsertDocumentClass"
+            data-FileName="{{this}}">Insert Documents</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-outline-primary ShowDocumentClass"
+            data-FileName="{{this}}">Show Documents</button>
     </td>
 </tr>
 {{/each}}

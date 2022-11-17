@@ -4,6 +4,18 @@ let CommonToDataFolder = require("../../../DataSupply/Fs/Config/Folders/Files/In
 let CommonToDataFolderFromInput = require("../../../DataSupply/Fs/Config/Folders/Files/Items/Insert/ToDataFolder/FromInput");
 
 let getDocumentDetails = async (req, res) => {
+    let jVarLocalInfileName = req.params.inLoanRef;
+
+    let LocalFromCommonFromDataSupply = await CommonDataSupply.FullJsonData({
+        inDataPK: 2051,
+        inFolderName: "Loans",
+        inFileNameWithExtension: `${jVarLocalInfileName}.json`
+    });
+
+    res.json(LocalFromCommonFromDataSupply.KResult);
+};
+
+let getDocumentDetailsFromPost = async (req, res) => {
     let jVarLocalInfileName = req.body.inFileName;
 
     let LocalFromCommonFromDataSupply = await CommonDataSupply.FullJsonData({
@@ -15,6 +27,7 @@ let getDocumentDetails = async (req, res) => {
 
     res.json(LocalFromCommonFromDataSupply.KResult);
 };
+
 
 let InsertDocumentDetails = async (req, res) => {
     console.log("sssssssss : ", req.params);
@@ -31,4 +44,4 @@ let InsertDocumentDetails = async (req, res) => {
     res.json({});
 };
 
-module.exports = { getDocumentDetails, InsertDocumentDetails };
+module.exports = { getDocumentDetails, InsertDocumentDetails, getDocumentDetailsFromPost };

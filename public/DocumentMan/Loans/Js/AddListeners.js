@@ -8,9 +8,6 @@ let StartFunc = async () => {
 
             // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
             document.location = `../Page/page1Show.html?LoanNumber=${jvarFileName}`
-
-
-            console.log("llllllllllll--", jvarFileName);
         })
     };
 
@@ -20,15 +17,22 @@ let StartFunc = async () => {
         jVarLocalDocumentClassName[i].addEventListener("click", function (event) {
             let jVarLocalCurrentTarget = event.currentTarget;
             let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
-            console.log("jvarFileName----------------------------");
 
-            // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
-            document.location = `../Documents/DocumentsInsert.html?DocumentNumber=${jvarFileName}`
-
-
-            console.log("llllllllllll--", jvarFileName);
+            document.location = `../Documents/DocumentsShow.html?DocumentNumber=${jvarFileName}`
         })
     };
+
+    let jVarLocalInsertDocumentClass = document.getElementsByClassName("InsertDocumentClass");
+
+    for (let i = 0; i < jVarLocalInsertDocumentClass.length; i++) {
+        jVarLocalInsertDocumentClass[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
+
+            document.location = `../Documents/DocumentsInsert.html?DocumentNumber=${jvarFileName}`
+        })
+    };
+    
 };
 
 
