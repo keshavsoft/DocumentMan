@@ -1,4 +1,4 @@
-let PostFunc = async ({ InFileName }) => {
+let PostFunc = async () => {
     let jVarLocalInputFileName = document.getElementById("InPutFileName");
     let jVarLocalLoanRef = jVarLocalInputFileName.value;
 
@@ -18,8 +18,8 @@ let PostFunc = async ({ InFileName }) => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
-    let data = await response.text();
-    //return data;
+    let data = await response.json();
+    return await data;
 };
 
 let LocalPrepareBodyData = ({ inLoanRef }) => {

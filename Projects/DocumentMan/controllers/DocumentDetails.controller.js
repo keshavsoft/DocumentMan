@@ -30,18 +30,17 @@ let getDocumentDetailsFromPost = async (req, res) => {
 
 
 let InsertDocumentDetails = async (req, res) => {
-    console.log("sssssssss : ", req.params);
     let LocalBody = req.body;
-    console.log("-InsertDocumentDetail------", LocalBody);
 
-    await CommonToDataFolderFromInput.StartFunc({
+    let LocalFromDataSupply = await CommonToDataFolderFromInput.StartFunc({
         inFolderName: "Loans",
         inFileNameWithExtension: req.params.inLoanRef,
         inItemName: "DocumentsInfo",
         inDataPK: 2051,
         inData: LocalBody
     });
-    res.json({});
+    
+    res.json(LocalFromDataSupply);
 };
 
 module.exports = { getDocumentDetails, InsertDocumentDetails, getDocumentDetailsFromPost };
