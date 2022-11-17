@@ -62,11 +62,20 @@
     <main>
         <div class="container">
             <datalist id="DocumentList"> </datalist>
-            <div class="input-group">
 
-                <input type="text" class="form-control" list="DocumentList"  id="InPutFileName" placeholder="Select File" autofocus>
-                <button class="btn btn-outline-secondary" type="button" onclick="" id="">Go</button>
-            </div>
+            <form class="row g-2">
+                <div class="col-md-11">
+                    <div class="input-group">
+                        <input type="text" class="form-control" list="DocumentList" id="InPutFileName"
+                            placeholder="Select File" autofocus>
+                        <span class="input-group-text" id="inputGroupPrepend2">Go</span>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-primary" type="button" onclick="" id="InfileTosaveId">Save</button>
+                </div>
+
+            </form>
 
 
 
@@ -80,7 +89,7 @@
                             <th scope="col">Nature of the Document</th>
                             <th scope="col">Original/Copy/Xerox</th>
                             <th scope="col">Page No.</th>
-                            <th scope="col">Save</th>
+                            <th scope="col">Insert</th>
                         </tr>
                     </thead>
                     <tbody id="TableBodyId">
@@ -131,7 +140,7 @@
                                         Please Enter PageNo.
                                     </div>
                             </td>
-                            <td> <button class="btn btn-primary" type="button" id="save">Save</button>
+                            <td> <button class="btn btn-primary" type="button" id="save">Insert</button>
 
                             </td>
                         </tr>
@@ -144,9 +153,7 @@
 
         </div>
     </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 

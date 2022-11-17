@@ -1,6 +1,7 @@
 import { StartFunc as ToLocalStorageStartFunc } from "./ToLocalStorage.js";
 import { DocumentValidateFunc } from "./Validate.js";
 import { ToTableBodyId as ShowOnDomToTableBodyId } from "./LocalStorageFuncs/PullData/ShowOnDom.js";
+import { FetchToSerVer as LocalPostToServerWithFileFetchToSerVer } from "./FetchFuncs/ToServer/LocalStrogeToServer.js";
 
 let SaveClickFunc = async (event) => {
     let jVarLocalFromValidate = await DocumentValidateFunc();
@@ -8,7 +9,6 @@ let SaveClickFunc = async (event) => {
     if (jVarLocalFromValidate.KTF) {
         let jVarLocalTableBodyId = document.getElementById("TableBodyId");
         let jVarLocalInputFileName = document.getElementById("InPutFileName");
-        console.log("jVarLocalInputFileName---", jVarLocalInputFileName);
 
 
         let jVarLocalDocumentNo = document.getElementById("DocumentId").value;
@@ -33,6 +33,9 @@ let SaveClickFunc = async (event) => {
         });
 
         ShowOnDomToTableBodyId({ inLoanRef: jVarLocalInputFileName.value });
+        LocalPostToServerWithFileFetchToSerVer({InFileName:jVarLocalInputFileName.value
+
+        });
         // window.location.href = "";
         // await LocalPostToServer();
         //await LocalPostToServerWithFile({ InFileName: jVarLocalInputFileName })
