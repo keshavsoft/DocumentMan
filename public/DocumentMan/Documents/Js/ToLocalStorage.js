@@ -1,6 +1,6 @@
 let StartFunc = ({ inDataToSave, inLoanRef }) => {
     console.log("aaaaaaaaa : ", inDataToSave, inLoanRef);
-    let LocalNewData = {}
+    let LocalNewData = { "Document": {} };
 
     if (inLoanRef in localStorage) {
         let LocalOldData = JSON.parse(localStorage.getItem(inLoanRef));
@@ -13,9 +13,7 @@ let StartFunc = ({ inDataToSave, inLoanRef }) => {
         };
 
     } else {
-        LocalNewData[inLoanRef] = {
-            "Document": { ...inDataToSave }
-        };
+        LocalNewData.Document = { ...inDataToSave }
     };
 
     localStorage.setItem(inLoanRef, JSON.stringify(LocalNewData));

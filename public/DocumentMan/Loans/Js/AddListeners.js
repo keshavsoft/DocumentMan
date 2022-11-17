@@ -23,7 +23,7 @@ let StartFunc = async () => {
             console.log("jvarFileName----------------------------");
 
             // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
-            document.location = `../Documents/DocumentShow.html?DocumentNumber=${jvarFileName}`
+            document.location = `../Documents/DocumentsInsert.html?DocumentNumber=${jvarFileName}`
 
 
             console.log("llllllllllll--", jvarFileName);

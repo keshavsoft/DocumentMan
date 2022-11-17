@@ -1,14 +1,13 @@
-import { SaveClickFunc } from "./ClickFuncs.js";
+import { SaveClickFunc as TableRowInsertFunc } from "./ClickFuncs.js";
 import { FromHbs } from "./ShowTable.js";
+import { PostFunc as FetchFuncsPostFunc } from "./FetchFuncs/ToServer/FromLocalStorage.js";
 
 let StartFunc = () => {
     let jVarLocalsaveClick = document.getElementById("save");
-
-    jVarLocalsaveClick.addEventListener("click", SaveClickFunc);
-
     let jVarLocalFileToSaveClick = document.getElementById("InfileTosaveId");
 
-    jVarLocalFileToSaveClick.addEventListener("click", SaveClickFunc);
+    jVarLocalsaveClick.addEventListener("click", TableRowInsertFunc);
+    jVarLocalFileToSaveClick.addEventListener("click", FetchFuncsPostFunc);
 
     document.addEventListener("DOMContentLoaded", FromHbs);
 };
@@ -29,8 +28,5 @@ let StartFuncShow = async () => {
         })
     };
 };
-
-
-
 
 export { StartFunc, StartFuncShow }
