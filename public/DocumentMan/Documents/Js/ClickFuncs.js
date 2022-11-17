@@ -10,7 +10,6 @@ let SaveClickFunc = async (event) => {
         let jVarLocalTableBodyId = document.getElementById("TableBodyId");
         let jVarLocalInputFileName = document.getElementById("InPutFileName");
 
-
         let jVarLocalDocumentNo = document.getElementById("DocumentId").value;
         let jVarLocalDocumentDate = document.getElementById("DocumentDateId").value;
         let jVarLocalNatureDocument = document.getElementById("NatureDocumentId").value;
