@@ -13,5 +13,4 @@ router.use('/Loans', CommonLoans);
 router.use('/LoanDetails', CommonLoanDetails);
 router.use('/DocumentDetails', CommonDocumentDetails);
 
-
 module.exports = router;
