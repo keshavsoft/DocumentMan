@@ -19,7 +19,7 @@ let jFClickDate = () => {
 let jFClickBranchId = () => {
     Swal.fire({
         title: 'Name of the DCCB Branch',
-        html: `<input type="text" id="BranchIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="BranchIdsweet" class="swal2-input" placeholder="Insert DCCB Branch "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -88,11 +88,65 @@ let jFClickPurposeId = () => {
     })
 
 };
+let jFClickPurposeId1 = () => {
+    Swal.fire({
+        title: 'Purpose',
+        html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#PurposeIdsweet').value;
+            let jVarLocalPurposeId = document.getElementById("PurposeId1");
+            localStorage.setItem("Purpose1", `${FolderName}`);
+            let jVarLocalPurpose = localStorage.getItem("Purpose1");
+            jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
+
+        }
+    })
+
+};
+let jFClickPurposeId2 = () => {
+    Swal.fire({
+        title: 'Purpose',
+        html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#PurposeIdsweet').value;
+            let jVarLocalPurposeId = document.getElementById("PurposeId2");
+            localStorage.setItem("Purpose2", `${FolderName}`);
+            let jVarLocalPurpose = localStorage.getItem("Purpose2");
+            jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
+
+        }
+    })
+
+};
+let jFClickPurposeId3 = () => {
+    Swal.fire({
+        title: 'Purpose',
+        html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#PurposeIdsweet').value;
+            let jVarLocalPurposeId = document.getElementById("PurposeId3");
+            localStorage.setItem("Purpose3", `${FolderName}`);
+            let jVarLocalPurpose = localStorage.getItem("Purpose3");
+            jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
+
+        }
+    })
+
+};
 
 let jFClickName1Id = () => {
     Swal.fire({
         title: '3)Who should mortgage the property in favour of the bank in case of sanction of loan',
-        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter FileName "> `,
+        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter  "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -111,7 +165,7 @@ let jFClickName1Id = () => {
 let jFClickName2Id = () => {
     Swal.fire({
         title: '2)Who is the actual title folder of the scheduled Property and mortgager',
-        html: `<input type="text" id="Name2Idsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="Name2Idsweet" class="swal2-input" placeholder="Insert  "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -130,7 +184,7 @@ let jFClickName2Id = () => {
 let jFClickVillageId = () => {
     Swal.fire({
         title: 'Name of the Village',
-        html: `<input type="text" id="VillageIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="VillageIdsweet" class="swal2-input" placeholder="Insert  "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -148,7 +202,7 @@ let jFClickVillageId = () => {
 let jFClickLandId = () => {
     Swal.fire({
         title: '1) The complete description of immovable Property of offered as security for creation of mortgage by deposits of the deeds',
-        html: `<input type="text" id="LandIdsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="LandIdsweet" class="swal2-input" placeholder="Insert "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -167,7 +221,7 @@ let jFClickLandId = () => {
 let jFClickName3Id = () => {
     Swal.fire({
         title: 'Name of the Applicant',
-        html: `<input type="text" id="Name3Idsweet" class="swal2-input" placeholder="Insert FileName "> `,
+        html: `<input type="text" id="Name3Idsweet" class="swal2-input" placeholder="Insert Applicant Name "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -272,15 +326,35 @@ let jFClickServeyNoTotal = () => {
     })
 
 };
+let jFClickServeyVillaageId = () => {
+    Swal.fire({
+        title: 'Enret Village Name',
+        html: `<input type="text" id="VillaageIdsweet" class="swal2-input" placeholder="Enret Village Name "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#VillaageIdsweet').value;
+            let jVarLocalVillaageId = document.getElementById("VillaageId");
+            localStorage.setItem("VillaageId", `${FolderName}`);
+            let jvarServeyNoTotal = localStorage.getItem("VillaageId");
+            jVarLocalVillaageId.innerHTML = jvarServeyNoTotal;
+
+        }
+    })
+
+};
 
 
 export {
     jFClickDate,
     jFClickBranchId, jFClickNumberId,
     jFClickNameId, jFClickPurposeId,
+    jFClickPurposeId1, jFClickPurposeId2,
+    jFClickPurposeId3, jFClickServeyVillaageId,
     jFClickName1Id, jFClickName2Id,
     jFClickVillageId, jFClickLandId,
     jFClickName3Id, jFClickServeyNo1,
     jFClickServeyNo2, jFClickServeyNo3,
-    jFClickServeyNo4,jFClickServeyNoTotal
+    jFClickServeyNo4, jFClickServeyNoTotal
 }
