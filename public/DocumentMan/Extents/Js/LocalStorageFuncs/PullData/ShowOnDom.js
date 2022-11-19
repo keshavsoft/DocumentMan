@@ -8,7 +8,7 @@ let ToTableBodyId = async ({ inLoanRef }) => {
 
         var template = Handlebars.compile(movies);
 
-        jVarLocalTableBodyId.innerHTML = template(jVarLocalData.DocumentsInfo);
+        jVarLocalTableBodyId.innerHTML = template(jVarLocalData.ExtentsInfo);
     };
 };
 

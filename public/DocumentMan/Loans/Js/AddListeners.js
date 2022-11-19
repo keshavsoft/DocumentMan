@@ -39,7 +39,18 @@ let StartFunc = async () => {
             let jVarLocalCurrentTarget = event.currentTarget;
             let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
 
-            document.location = `../Extents/ExtentsInsert.html?DocumentNumber=${jvarFileName}`
+            document.location = `../Extents/ExtentsInsert.html?Insertextents=${jvarFileName}`
+        })
+    };
+
+
+    let jVarLocalShowextents = document.getElementsByClassName("Showextents");
+    for (let i = 0; i < jVarLocalShowextents.length; i++) {
+        jVarLocalShowextents[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
+
+            document.location = `../Extents/ExtentsShow.html?Insertextents=${jvarFileName}`
         })
     };
 
