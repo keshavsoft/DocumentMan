@@ -18,6 +18,7 @@ let jFShowToDOM = () => {
     jFShowToDOMNameOfServeyNo3();
     jFShowToDOMNameOfServeyNo4();
     jFShowToDOMNameOfServeyNoTotal();
+    jFShowToDOMNameOfVillaageId();
 
 };
 
@@ -133,7 +134,7 @@ let jFShowToDOMNameOfPACA = () => {
 
 };
 let jFShowToDOMNameOfName1 = () => {
-    let jVarLocalKey = "Name1";
+    let jVarLocalKey = "LANo";
     let jVarLocalName1 = document.getElementById("Name1Id");
 
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
@@ -190,6 +191,16 @@ let jFShowToDOMNameOfServeyNo4 = () => {
 let jFShowToDOMNameOfServeyNoTotal = () => {
     let jVarLocalKey = "ServeyNoTotal";
     let jVarLocalName3Id = document.getElementById("ServeyNoTotal");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+};
+
+let jFShowToDOMNameOfVillaageId = () => {
+    let jVarLocalKey = "VillaageId";
+    let jVarLocalName3Id = document.getElementById("VillaageId");
 
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);

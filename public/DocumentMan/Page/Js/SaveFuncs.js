@@ -14,7 +14,7 @@ let FetchPost = async () => {
     let jVarLocalLand = localStorage.getItem("Land");
     let jVarLocalVillage = localStorage.getItem("Village");
     let jVarLocalName2Id = localStorage.getItem("Name2Id");
-    let jVarLocalName1 = localStorage.getItem("Name1");
+    let jVarLocalName1 = localStorage.getItem("LANo");
     let jVarLocalServeyNo1 = localStorage.getItem("ServeyNo1");
     let jVarLocalServeyNo2 = localStorage.getItem("ServeyNo2");
     let jVarLocalServeyNo3 = localStorage.getItem("ServeyNo3");
@@ -41,7 +41,7 @@ let FetchPost = async () => {
             Land: jVarLocalLand,
             Village: jVarLocalVillage,
             Name2Id: jVarLocalName2Id,
-            Name1: jVarLocalName1,
+            LANo: jVarLocalName1,
             ServeyNo1: jVarLocalServeyNo1,
             ServeyNo2: jVarLocalServeyNo2,
             ServeyNo3: jVarLocalServeyNo3,
