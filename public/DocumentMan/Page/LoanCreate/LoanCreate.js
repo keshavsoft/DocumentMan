@@ -1,10 +1,9 @@
 import { jFAddListeners } from "./Js/AddListeners.js";
-import { ReturnLoanNumber } from "./Js/urlSearchParams.js";
-import { FetchPost as PullDataFetchPost } from "./Js/PullData.js";
-import { jFShowToDOM } from "./Js/ShowData.js";
 import { ToMainTag } from "./Js/StartFuncs/ToDom.js";
 
-ToMainTag();
+ToMainTag({ inProjectName: "DocumentMan" }).then(() => {
+    jFAddListeners();
+});
 
 // let jVarLocalLoanNumber = ReturnLoanNumber();
 
@@ -14,5 +13,3 @@ ToMainTag();
 //         jFShowToDOM();
 //     });
 // };
-
-//jFAddListeners();
