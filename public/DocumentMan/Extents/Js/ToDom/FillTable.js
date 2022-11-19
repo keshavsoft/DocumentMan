@@ -1,4 +1,4 @@
-import { GetFunc } from "../FetchFuncs/FromServer/getDocuments.js";
+import { GetFunc } from "../FetchFuncs/FromServer/getExtents.js";
 import { jFInsert as PushDatajFInsert } from "../LocalStorageFuncs/PushData/ToDocumentsInfo.js";
 import { ToTableBodyId as ShowOnDomToTableBodyId } from "../LocalStorageFuncs/PullData/ShowOnDom.js";
 
@@ -8,7 +8,7 @@ let ShowInDom = async ({ inLoanRef }) => {
     let jVarLocalData = await GetFunc({ inLoanRef });
 
     PushDatajFInsert({
-        inData: { DocumentsInfo: jVarLocalData.ExtentsInfo },
+        inData: { ExtentsInfo: jVarLocalData.ExtentsInfo },
         inLoanRef
     });
 
