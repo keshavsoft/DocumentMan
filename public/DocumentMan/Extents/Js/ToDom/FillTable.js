@@ -3,8 +3,6 @@ import { jFInsert as PushDatajFInsert } from "../LocalStorageFuncs/PushData/ToDo
 import { ToTableBodyId as ShowOnDomToTableBodyId } from "../LocalStorageFuncs/PullData/ShowOnDom.js";
 
 let ShowInDom = async ({ inLoanRef }) => {
-    let jVarLocalTableBodyId = document.getElementById("TableBodyId");
-
     let jVarLocalData = await GetFunc({ inLoanRef });
 
     PushDatajFInsert({
@@ -13,7 +11,6 @@ let ShowInDom = async ({ inLoanRef }) => {
     });
 
     ShowOnDomToTableBodyId({ inLoanRef });
-    console.log("sssssss : ", jVarLocalData);
 };
 
 export { ShowInDom }
