@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    
     <header class="mb-3">
         <div id="NavBarId" class="px-2 py-2 bg-dark text-white">
             <div class="container">
@@ -51,6 +52,12 @@
     </header>
     <main>
         <div class="container">
+            <datalist id="OCX">
+                <option>Original</option>
+                <option >Copy</option>
+                <option>Xerox</option>
+        
+            </datalist>
 
             <label for="InPutFileName">Loan reference</label>
             <input type="text" class="form-control" id="InPutFileName" disabled>
@@ -79,7 +86,7 @@
                             <td></td>
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" name="DocumentNo" id="DocumentId"
+                                    <input type="text" class="form-control fs-5" autocomplete="off" name="DocumentNo" id="DocumentId"
                                         aria-describedby="emailHelp" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter DocumentId.
@@ -88,7 +95,7 @@
                             </td>
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" name="DocumentDate" id="DocumentDateId"
+                                    <input type="text" class="form-control fs-5" autocomplete="off" name="DocumentDate" id="DocumentDateId"
                                         aria-describedby="emailHelp" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter DocumentId.
@@ -96,7 +103,7 @@
                             </td>
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" name="NatureoOftheDocument"
+                                    <input type="text" class="form-control fs-5" autocomplete="off" name="NatureoOftheDocument"
                                         id="NatureDocumentId" aria-describedby="emailHelp" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter DocumentId.
@@ -104,15 +111,15 @@
                             </td>
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" name="Original/Copy/Xerox"
-                                        id="CopyXeroxId" aria-describedby="emailHelp" required="" autofocus="">
+                                    <input type="list" class="form-control fs-5" list="OCX" name="Original/Copy/Xerox"
+                                        id="CopyXeroxId" aria-describedby="emailHelp" autocomplete="off" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter Data.
                                     </div>
                             </td>
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" name="PageNo" id="PageNoId"
+                                    <input type="text" class="form-control fs-5" autocomplete="off" name="PageNo" id="PageNoId"
                                         aria-describedby="emailHelp" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter PageNo.

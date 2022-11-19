@@ -72,6 +72,7 @@ let jFAddListeners = () => {
     let jVarLocalVillaageId = document.getElementById("VillaageId");
     jVarLocalVillaageId.addEventListener("click", jFClickServeyVillaageId);
     
+    
 
     let jVarLocalSave = document.getElementById("PageSave");
     jVarLocalSave.addEventListener("click", SaveFuncsFetchPost);

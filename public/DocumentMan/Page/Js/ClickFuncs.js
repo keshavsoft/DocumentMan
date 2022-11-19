@@ -145,7 +145,7 @@ let jFClickPurposeId3 = () => {
 
 let jFClickName1Id = () => {
     Swal.fire({
-        title: '3)Who should mortgage the property in favour of the bank in case of sanction of loan',
+        title: 'Enter L.A.N.O',
         html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter  "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
@@ -153,8 +153,8 @@ let jFClickName1Id = () => {
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#Name1IdIdsweet').value;
             let jVarLocalName1Id = document.getElementById("Name1Id");
-            localStorage.setItem("Name1", `${FolderName}`);
-            let jVarLocalName1 = localStorage.getItem("Name1");
+            localStorage.setItem("LANo", `${FolderName}`);
+            let jVarLocalName1 = localStorage.getItem("LANo");
             jVarLocalName1Id.innerHTML = jVarLocalName1;
         }
     })
