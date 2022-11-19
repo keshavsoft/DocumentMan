@@ -8,7 +8,7 @@ let ShowInDom = async ({ inLoanRef }) => {
     let jVarLocalData = await GetFunc({ inLoanRef });
 
     PushDatajFInsert({
-        inData: { DocumentsInfo: jVarLocalData.DocumentsInfo },
+        inData: { DocumentsInfo: jVarLocalData.ExtentsInfo },
         inLoanRef
     });
 

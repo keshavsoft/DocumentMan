@@ -1,7 +1,7 @@
 let ReturnLoanNumber = () => {
     let jVarLocalSearch = document.location.search;
     const params = new URLSearchParams(jVarLocalSearch);
-    const q = parseInt(params.get("DocumentNumber"));
+    const q = parseInt(params.get("ExtentsNumber"));
 
     return q;
 };

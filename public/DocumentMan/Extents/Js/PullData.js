@@ -1,5 +1,5 @@
 let FetchPost = async ({ inLoanNumber }) => {
-    let jVarLocalFetch = "/DocumentMan/DocumentDetails";
+    let jVarLocalFetch = "/DocumentMan/ExtentsDetails";
 
     const settings = {
         method: 'POST',
