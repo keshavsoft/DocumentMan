@@ -1,5 +1,5 @@
 let FromHbs = async () => {
-    let jVarLocalTableBodyId = document.getElementById("TableBodyId");
+    let jVarLocalTableBodyId = document.getElementById("TableBodyForExtentsId");
 
     let jVarLocalData = localStorage.getItem("Document");
     const response = await fetch('TableRow.html');
