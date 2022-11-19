@@ -32,7 +32,17 @@ let StartFunc = async () => {
             document.location = `../Documents/DocumentsInsert.html?DocumentNumber=${jvarFileName}`
         })
     };
-    
+
+    let jVarLocalInsertShowextents = document.getElementsByClassName("Insertextents");
+    for (let i = 0; i < jVarLocalInsertShowextents.length; i++) {
+        jVarLocalInsertShowextents[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
+
+            document.location = `../Extents/ExtentsInsert.html?DocumentNumber=${jvarFileName}`
+        })
+    };
+
 };
 
 
