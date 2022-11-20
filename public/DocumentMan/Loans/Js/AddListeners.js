@@ -7,7 +7,7 @@ let StartFunc = async () => {
             let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
 
             // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
-            document.location = `../Page/page1print.html?LoanNumber=${jvarFileName}`
+            document.location = `../Page/page1Show.html?LoanNumber=${jvarFileName}`
         })
     };
 
