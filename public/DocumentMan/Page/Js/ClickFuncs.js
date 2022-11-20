@@ -173,7 +173,7 @@ let jFClickName2Id = () => {
             const FolderName = Swal.getPopup().querySelector('#Name2Idsweet').value;
             let jVarLocalName1Id = document.getElementById("Name2Id");
             localStorage.setItem("Name2Id", `${FolderName}`);
-            let jVarLocalName1 = localStorage.getItem("Name2Id");
+            let jVarLocalName1 = localStorage.getItem("Name3Id");
             jVarLocalName1Id.innerHTML = jVarLocalName1;
 
 
@@ -345,9 +345,27 @@ let jFClickServeyVillaageId = () => {
 
 };
 
+let jFClickLANo = () => {
+    Swal.fire({
+        title: 'Enter L.A.N.O',
+        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter  "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#Name1IdIdsweet').value;
+            let jVarLocalName1Id = document.getElementById("LaNo");
+            localStorage.setItem("LaNo", `${FolderName}`);
+            let jVarLocalName1 = localStorage.getItem("LaNo");
+            jVarLocalName1Id.innerHTML = jVarLocalName1;
+        }
+    })
+
+};
+
 
 export {
-    jFClickDate,
+    jFClickDate,jFClickLANo,
     jFClickBranchId, jFClickNumberId,
     jFClickNameId, jFClickPurposeId,
     jFClickPurposeId1, jFClickPurposeId2,
