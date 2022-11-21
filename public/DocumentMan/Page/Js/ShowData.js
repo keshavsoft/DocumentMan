@@ -14,7 +14,7 @@ let jFShowToDOM = () => {
     jFShowToDOMNameOfLaNo();
     // jFShowToDOMNameOfVillageId();
     jFShowToDOMNameOfName2Id();
-    jFShowToDOMNameOfName1();
+    //   jFShowToDOMNameOfName1();
     // jFShowToDOMNameOfServeyNo1();
     // jFShowToDOMNameOfServeyNo2();
     // jFShowToDOMNameOfServeyNo3();

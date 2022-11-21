@@ -7,7 +7,6 @@ let ToTableBodyId = async ({ inLoanRef }) => {
 
         const response = await fetch('/DocumentMan/Extents/TableRow.html');
 
-        
         const movies = await response.text();
 
         var template = Handlebars.compile(movies);

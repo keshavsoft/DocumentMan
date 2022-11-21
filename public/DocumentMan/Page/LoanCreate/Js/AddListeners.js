@@ -20,8 +20,8 @@ let jFAddListeners = () => {
     let jVarLocalBranchId = document.getElementById("BranchId");
     jVarLocalBranchId.addEventListener("click", jFClickBranchId);
 
-    let jVarLocalNameId = document.getElementById("NameId");
-    jVarLocalNameId.addEventListener("click", jFClickNameId);
+    // let jVarLocalNameId = document.getElementById("NameId");
+    // jVarLocalNameId.addEventListener("click", jFClickNameId);
 
     let jVarLocalNumberId = document.getElementById("NumberId");
     jVarLocalNumberId.addEventListener("click", jFClickNumberId);
@@ -39,8 +39,8 @@ let jFAddListeners = () => {
     let jVarLocalPurposeId3 = document.getElementById("PurposeId3");
     jVarLocalPurposeId3.addEventListener("click", jFClickPurposeId3);
 
-    let jVarLocalName1Id = document.getElementById("Name1Id");
-    jVarLocalName1Id.addEventListener("click", jFClickName1Id);
+    // let jVarLocalName1Id = document.getElementById("Name1Id");
+    // jVarLocalName1Id.addEventListener("click", jFClickName1Id);
 
     // let jVarLocalName2Id = document.getElementById("Name2Id");
     // jVarLocalName2Id.addEventListener("click", jFClickName2Id);
@@ -72,15 +72,8 @@ let jFAddListeners = () => {
     let jVarLocalVillaageId = document.getElementById("VillaageId");
     jVarLocalVillaageId.addEventListener("click", jFClickServeyVillaageId);
 
-
-
     let jVarLocalSave = document.getElementById("PageSave");
     jVarLocalSave.addEventListener("click", SaveFuncsFetchPost);
-
-
-
 };
-
-
 
 export { jFAddListeners }
