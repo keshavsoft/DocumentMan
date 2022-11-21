@@ -23,7 +23,6 @@ let getDocumentDetailsFromPost = async (req, res) => {
         inFolderName: "Loans",
         inFileNameWithExtension: jVarLocalInfileName
     });
-    console.log("LocalFromCommonFromDataSupply.KResult---", LocalFromCommonFromDataSupply);
 
     res.json(LocalFromCommonFromDataSupply.KResult);
 };

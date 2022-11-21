@@ -13,9 +13,12 @@ let FromData = async () => {
     let responseFormData = await fetch(jVarLocalFetchUrl);
     let data = await responseFormData.json();
 
+    let LocalFileNamesOnly = data.map(element => {
+        return parseInt(element.split(".")[0]);
+    });
+    let SortedData = LocalFileNamesOnly.sort((a, b) => a - b); // For ascending sort
 
-    return await data;
-
+    return await SortedData;
 };
 
 let StartFunc = async () => {
@@ -29,7 +32,6 @@ let StartFunc = async () => {
     jVarLocalTbody.innerHTML = jVarLocalTemplate;
 
     AddListenersStartFunc();
-//    StartFuncShow()
 };
 
 export { StartFunc }
