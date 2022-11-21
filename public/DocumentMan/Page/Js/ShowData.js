@@ -13,7 +13,7 @@ let jFShowToDOM = () => {
     jFShowToDOMNameOfLandId();
     jFShowToDOMNameOfLaNo();
     // jFShowToDOMNameOfVillageId();
-    jFShowToDOMNameOfName2Id();
+    // jFShowToDOMNameOfName2Id();
     //   jFShowToDOMNameOfName1();
     // jFShowToDOMNameOfServeyNo1();
     // jFShowToDOMNameOfServeyNo2();
@@ -95,16 +95,16 @@ let jFShowToDOMNameOfVillageId = () => {
     jVarLocalVillage.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
 
 };
-let jFShowToDOMNameOfName2Id = () => {
-    let jVarLocalKey = "Name2Id";
-    let jVarLocalName2Id = document.getElementById("Name2Id");
+// let jFShowToDOMNameOfName2Id = () => {
+//     let jVarLocalKey = "Name2Id";
+//     let jVarLocalName2Id = document.getElementById("Name2Id");
 
-    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+//     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+//     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalName2Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+//     jVarLocalName2Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
 
-};
+// };
 let jFShowToDOMNameOfLandId = () => {
     let jVarLocalKey = "Land";
     let jVarLocalLand = document.getElementById("LandId");
@@ -148,11 +148,18 @@ let jFShowToDOMNameOfName1 = () => {
 let jFShowToDOMNameOfName3Id = () => {
     let jVarLocalKey = "Name3";
     let jVarLocalName3Id = document.getElementById("Name3Id");
+    let jVarLocalName2IdValue = document.getElementById("Name2Id");
+    let jVarLocalpropertyFavourId = document.getElementById("propertyFavourId");
+
+
 
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
     jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+    jVarLocalName2IdValue.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+    jVarLocalpropertyFavourId.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+
 };
 let jFShowToDOMNameOfLaNo = () => {
     let jVarLocalKey = "LaNo";

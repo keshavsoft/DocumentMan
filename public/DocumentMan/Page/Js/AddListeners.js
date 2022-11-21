@@ -39,8 +39,8 @@ let jFAddListeners = () => {
     let jVarLocalPurposeId3 = document.getElementById("PurposeId3");
     jVarLocalPurposeId3.addEventListener("click", jFClickPurposeId3);
 
-    let jVarLocalName1Id = document.getElementById("Name1Id");
-    jVarLocalName1Id.addEventListener("click", jFClickName1Id);
+    // let jVarLocalName1Id = document.getElementById("Name1Id");
+    // jVarLocalName1Id.addEventListener("click", jFClickName1Id);
 
     let jVarLocalName2Id = document.getElementById("Name2Id");
     jVarLocalName2Id.addEventListener("click", jFClickName2Id);

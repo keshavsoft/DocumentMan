@@ -1,7 +1,7 @@
 let jFClickDate = () => {
     Swal.fire({
         title: 'Enter Date: ',
-        html: `<input type="date" id="Numbersweet" class="swal2-input" placeholder=" Enter Date "> `,
+        html: `<input type="date" id="Numbersweet" class="swal2-input" value = "21/11/2022" placeholder=" Enter Date "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -162,24 +162,24 @@ let jFClickName1Id = () => {
 };
 
 
-let jFClickName2Id = () => {
-    Swal.fire({
-        title: '2)Who is the actual title folder of the scheduled Property and mortgager',
-        html: `<input type="text" id="Name2Idsweet" class="swal2-input" placeholder="Insert  "> `,
-        confirmButtonText: 'Insert',
-        focusConfirm: false,
+// let jFClickName2Id = () => {
+//     Swal.fire({
+//         title: '2)Who is the actual title folder of the scheduled Property and mortgager',
+//         html: `<input type="text" id="Name2Idsweet" class="swal2-input" placeholder="Insert  "> `,
+//         confirmButtonText: 'Insert',
+//         focusConfirm: false,
 
-        preConfirm: () => {
-            const FolderName = Swal.getPopup().querySelector('#Name2Idsweet').value;
-            let jVarLocalName1Id = document.getElementById("Name2Id");
-            localStorage.setItem("Name2Id", `${FolderName}`);
-            let jVarLocalName1 = localStorage.getItem("Name2Id");
-            jVarLocalName1Id.innerHTML = jVarLocalName1;
+//         preConfirm: () => {
+//             const FolderName = Swal.getPopup().querySelector('#Name2Idsweet').value;
+//             let jVarLocalName1Id = document.getElementById("Name2Id");
+//             // localStorage.setItem("Name2Id", `${FolderName}`);
+//             let jVarLocalName1 = localStorage.getItem("Name3");
+//             jVarLocalName1Id.innerHTML = jVarLocalName1;
 
 
-        }
-    })
-};
+//         }
+//     })
+// };
 
 let jFClickVillageId = () => {
     Swal.fire({
@@ -228,9 +228,19 @@ let jFClickName3Id = () => {
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#Name3Idsweet').value;
             let jVarLocalName3Id = document.getElementById("Name3Id");
+            let jVarLocalName1Id = document.getElementById("Name2Id");
+            let jVarLocalNameId = document.getElementById("propertyFavourId");
+
+
             localStorage.setItem("Name3", `${FolderName}`);
             let jvarName3 = localStorage.getItem("Name3");
             jVarLocalName3Id.innerHTML = jvarName3;
+            jVarLocalName1Id.innerHTML = jvarName3;
+            jVarLocalNameId.innerHTML = jvarName3;
+
+
+
+
 
         }
     })
@@ -345,14 +355,32 @@ let jFClickServeyVillaageId = () => {
 
 };
 
+let jFClickLANo = () => {
+    Swal.fire({
+        title: 'Enter L.A.N.O',
+        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter  "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#Name1IdIdsweet').value;
+            let jVarLocalName1Id = document.getElementById("LaNo");
+            localStorage.setItem("LaNo", `${FolderName}`);
+            let jVarLocalName1 = localStorage.getItem("LaNo");
+            jVarLocalName1Id.innerHTML = jVarLocalName1;
+        }
+    })
+
+};
+
 
 export {
-    jFClickDate,
+    jFClickDate, jFClickLANo,
     jFClickBranchId, jFClickNumberId,
-    jFClickNameId, jFClickPurposeId,
+    jFClickPurposeId,jFClickNameId,
     jFClickPurposeId1, jFClickPurposeId2,
     jFClickPurposeId3, jFClickServeyVillaageId,
-    jFClickName1Id, jFClickName2Id,
+    jFClickName1Id,
     jFClickVillageId, jFClickLandId,
     jFClickName3Id, jFClickServeyNo1,
     jFClickServeyNo2, jFClickServeyNo3,
