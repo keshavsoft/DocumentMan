@@ -1,3 +1,5 @@
+import { result } from "lodash";
+
 let jFClickDate = () => {
     Swal.fire({
         title: 'Enter Date: ',
@@ -8,13 +10,17 @@ let jFClickDate = () => {
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#Numbersweet').value;
 
-            localStorage.setItem("DocumentDate", `${FolderName}`);
-            let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
+            return { FolderName };
+            // localStorage.setItem("DocumentDate", `${FolderName}`);
+            // let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
 
-            let jVarLocalDate = document.getElementById("DateId");
-            jVarLocalDate.innerHTML = FolderName;
+            // let jVarLocalDate = document.getElementById("DateId");
+            // jVarLocalDate.innerHTML = FolderName;
         }
-    })
+    }).then(result => {
+        let jVarLocalDate = document.getElementById("DateId");
+        jVarLocalDate.innerHTML = result.value.FolderName;
+    });
 };
 
 let jFClickBranchId = () => {
@@ -26,12 +32,13 @@ let jFClickBranchId = () => {
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#BranchIdsweet').value;
-            let jVarLocalBranchId = document.getElementById("BranchId");
-            localStorage.setItem("BranchId", `${FolderName}`);
-            let jVarLocalBranchName = localStorage.getItem("BranchId");
-            jVarLocalBranchId.innerHTML = jVarLocalBranchName;
+            return { FolderName };
         }
-    })
+    }).then(result => {
+        let jVarLocalBranchId = document.getElementById("BranchId");
+        jVarLocalBranchId.innerHTML = result.value.FolderName;
+
+    });
 
 };
 
@@ -44,12 +51,13 @@ let jFClickNumberId = () => {
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#NumberIdsweet').value;
-            let jVarLocalNumberId = document.getElementById("NumberId");
-            localStorage.setItem("LANumber", `${FolderName}`);
-            let jVarLocalNumber = localStorage.getItem("LANumber");
-            jVarLocalNumberId.innerHTML = jVarLocalNumber;
+            return { FolderName }
         }
-    })
+    }).then(result => {
+        let jVarLocalNumberId = document.getElementById("NumberId");
+        jVarLocalNumberId.innerHTML = result.value.FolderName;
+
+    });
 
 };
 
@@ -62,54 +70,58 @@ let jFClickNameId = () => {
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#NameIdsweet').value;
-            let jVarLocalNameId = document.getElementById("NameId");
-            localStorage.setItem("Name", `${FolderName}`);
-            let jVarLocalName = localStorage.getItem("Name");
-            jVarLocalNameId.innerHTML = jVarLocalName;
+            return { FolderName };
         }
-    })
+    }).then(result => {
+        let jVarLocalNameId = document.getElementById("NameId");
+        jVarLocalNameId.innerHTML = result.value.FolderName;
+
+
+    });
 
 };
 
 let jFClickPurposeId = () => {
     Swal.fire({
-        title: 'Purpose',
+        title: 'Purpose1',
         html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#PurposeIdsweet').value;
-            let jVarLocalPurposeId = document.getElementById("PurposeId");
-            localStorage.setItem("Purpose", `${FolderName}`);
-            let jVarLocalPurpose = localStorage.getItem("Purpose");
-            jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
+            return { FolderName };
 
         }
-    })
+    }).then(result => {
+        let jVarLocalPurposeId = document.getElementById("PurposeId");
+        jVarLocalPurposeId.innerHTML = result.value.FolderName;
+
+    });
 
 };
 let jFClickPurposeId1 = () => {
     Swal.fire({
-        title: 'Purpose',
+        title: 'Purpose2',
         html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#PurposeIdsweet').value;
-            let jVarLocalPurposeId = document.getElementById("PurposeId1");
-            localStorage.setItem("Purpose1", `${FolderName}`);
-            let jVarLocalPurpose = localStorage.getItem("Purpose1");
-            jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
-
+            return { FolderName };
         }
-    })
+    }).then(result => {
+        let jVarLocalPurposeId = document.getElementById("PurposeId1");
+        jVarLocalPurposeId.innerHTML = result.value.FolderName;
+
+
+    });
 
 };
 let jFClickPurposeId2 = () => {
     Swal.fire({
-        title: 'Purpose',
+        title: 'Purpose3',
         html: `<input type="text" id="PurposeIdsweet" class="swal2-input" placeholder="Enter Purpose "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
@@ -122,7 +134,9 @@ let jFClickPurposeId2 = () => {
             jVarLocalPurposeId.innerHTML = jVarLocalPurpose;
 
         }
-    })
+    }).then(result=>{
+        
+    });
 
 };
 let jFClickPurposeId3 = () => {
