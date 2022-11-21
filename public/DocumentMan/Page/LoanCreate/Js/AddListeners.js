@@ -8,7 +8,7 @@ import {
     jFClickLandId, jFClickName3Id,
     jFClickServeyNo1, jFClickServeyNo2,
     jFClickServeyNo3, jFClickServeyNo4,
-    jFClickServeyNoTotal
+    jFClickServeyNoTotal,jFClickLANo
 } from "./ClickFuncs.js";
 import { FetchPost as SaveFuncsFetchPost } from "./SaveFuncs.js";
 
@@ -39,17 +39,17 @@ let jFAddListeners = () => {
     let jVarLocalPurposeId3 = document.getElementById("PurposeId3");
     jVarLocalPurposeId3.addEventListener("click", jFClickPurposeId3);
 
-    let jVarLocalName1Id = document.getElementById("Name1Id");
-    jVarLocalName1Id.addEventListener("click", jFClickName1Id);
+    // let jVarLocalName1Id = document.getElementById("Name1Id");
+    // jVarLocalName1Id.addEventListener("click", jFClickName1Id);
 
     // let jVarLocalName2Id = document.getElementById("Name2Id");
     // jVarLocalName2Id.addEventListener("click", jFClickName2Id);
 
     // let jVarLocalVillageId = document.getElementById("VillageId");
-    // jVarLocalVillageId.addEventListener("click", jFClickVillageId);
+    // jVarLocalVillageId.addEventListener("click", jFClickLANo);
 
-    let jVarLocalLandId = document.getElementById("LandId");
-    jVarLocalLandId.addEventListener("click", jFClickLandId);
+    let jVarLocalLaNoId = document.getElementById("LaNo");
+    jVarLocalLaNoId.addEventListener("click", jFClickLANo);
 
     let jVarLocalName3Id = document.getElementById("Name3Id");
     jVarLocalName3Id.addEventListener("click", jFClickName3Id);

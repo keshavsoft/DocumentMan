@@ -1,7 +1,7 @@
 let jFClickDate = () => {
     Swal.fire({
         title: 'Enter Date: ',
-        html: `<input type="date" id="Numbersweet" class="swal2-input" placeholder=" Enter Date "> `,
+        html: `<input type="date" id="Numbersweet" class="swal2-input" value = "21/11/2022" placeholder=" Enter Date "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
@@ -345,9 +345,27 @@ let jFClickServeyVillaageId = () => {
 
 };
 
+let jFClickLANo = () => {
+    Swal.fire({
+        title: 'Enter L.A.N.O',
+        html: `<input type="text" id="Name1IdIdsweet" class="swal2-input" placeholder="Enter  "> `,
+        confirmButtonText: 'Insert',
+        focusConfirm: false,
+
+        preConfirm: () => {
+            const FolderName = Swal.getPopup().querySelector('#Name1IdIdsweet').value;
+            let jVarLocalName1Id = document.getElementById("LaNo");
+            localStorage.setItem("LaNo", `${FolderName}`);
+            let jVarLocalName1 = localStorage.getItem("LaNo");
+            jVarLocalName1Id.innerHTML = jVarLocalName1;
+        }
+    })
+
+};
+
 
 export {
-    jFClickDate,
+    jFClickDate,jFClickLANo,
     jFClickBranchId, jFClickNumberId,
     jFClickNameId, jFClickPurposeId,
     jFClickPurposeId1, jFClickPurposeId2,
