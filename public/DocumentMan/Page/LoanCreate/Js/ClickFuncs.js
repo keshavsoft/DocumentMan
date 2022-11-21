@@ -1,19 +1,24 @@
 let jFClickDate = () => {
     Swal.fire({
         title: 'Enter Date: ',
-        html: `<input type="date" id="Numbersweet" class="swal2-input" value = "21/11/2022" placeholder=" Enter Date "> `,
+        html: `<input type="date" id="Numbersweet" class="swal2-input" value = "2022-11-01" placeholder=" Enter Date "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#Numbersweet').value;
-            let jVarLocalDate = document.getElementById("DateId");
-            localStorage.setItem("DocumentDate", `${FolderName}`);
-            let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
-            jVarLocalDate.innerHTML = jVarLocalDateFromLocalStroge;
-        }
-    })
 
+            return { FolderName };
+            // localStorage.setItem("DocumentDate", `${FolderName}`);
+            // let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
+
+            // let jVarLocalDate = document.getElementById("DateId");
+            // jVarLocalDate.innerHTML = FolderName;
+        }
+    }).then(result => {
+        let jVarLocalDate = document.getElementById("DateId");
+        jVarLocalDate.innerHTML = result.value.FolderName;
+    });
 };
 
 let jFClickBranchId = () => {
@@ -377,7 +382,7 @@ let jFClickLANo = () => {
 export {
     jFClickDate, jFClickLANo,
     jFClickBranchId, jFClickNumberId,
-    jFClickPurposeId,jFClickNameId,
+    jFClickPurposeId, jFClickNameId,
     jFClickPurposeId1, jFClickPurposeId2,
     jFClickPurposeId3, jFClickServeyVillaageId,
     jFClickName1Id,
