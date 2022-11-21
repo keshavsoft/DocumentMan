@@ -1,6 +1,6 @@
 let jFShowToDOM = () => {
 
-    jFShowToDOMNameOfDate();
+    // jFShowToDOMNameOfDate();
 
     // jFShowToDOMNameOfBranchId();
     // jFShowToDOMNameOfPACA();

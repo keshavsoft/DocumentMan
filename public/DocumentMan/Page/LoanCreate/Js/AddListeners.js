@@ -4,7 +4,7 @@ import {
     jFClickPurposeId, jFClickPurposeId1,
     jFClickPurposeId2, jFClickPurposeId3,
     jFClickName1Id, jFClickServeyVillaageId,
-    jFClickName2Id, jFClickVillageId,
+     jFClickVillageId,
     jFClickLandId, jFClickName3Id,
     jFClickServeyNo1, jFClickServeyNo2,
     jFClickServeyNo3, jFClickServeyNo4,
@@ -20,8 +20,8 @@ let jFAddListeners = () => {
     let jVarLocalBranchId = document.getElementById("BranchId");
     jVarLocalBranchId.addEventListener("click", jFClickBranchId);
 
-    // let jVarLocalNameId = document.getElementById("NameId");
-    // jVarLocalNameId.addEventListener("click", jFClickNameId);
+    let jVarLocalNameId = document.getElementById("NameId");
+    jVarLocalNameId.addEventListener("click", jFClickNameId);
 
     let jVarLocalNumberId = document.getElementById("NumberId");
     jVarLocalNumberId.addEventListener("click", jFClickNumberId);
@@ -66,8 +66,8 @@ let jFAddListeners = () => {
     // let jVarLocalServeyNo4 = document.getElementById("ServeyNo4");
     // jVarLocalServeyNo4.addEventListener("click", jFClickServeyNo4);
 
-    // let jVarLocalServeyNoTotal = document.getElementById("ServeyNoTotal");
-    // jVarLocalServeyNoTotal.addEventListener("click", jFClickServeyNoTotal);
+    let jVarLocaljFClickLandId = document.getElementById("LandId");
+    jVarLocaljFClickLandId.addEventListener("click", jFClickLandId);
 
     let jVarLocalVillaageId = document.getElementById("VillaageId");
     jVarLocalVillaageId.addEventListener("click", jFClickServeyVillaageId);
