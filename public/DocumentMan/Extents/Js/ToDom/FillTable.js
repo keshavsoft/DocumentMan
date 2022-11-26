@@ -10,7 +10,7 @@ let ShowInDom = async ({ inLoanRef }) => {
         inLoanRef
     });
 
-    ShowOnDomToTableBodyId({ inLoanRef });
+    await ShowOnDomToTableBodyId({ inLoanRef });
 };
 
 export { ShowInDom }
