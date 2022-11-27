@@ -8,7 +8,7 @@ let getLoans = async (req, res) => {
     });
 
     if (LocalFromCommonFromDataSupply.KTF === false) {
-        res.end(LocalFromCommonFromDataSupply.KReson)
+      return await  res.end(LocalFromCommonFromDataSupply.KReson)
     };
 
     res.json(LocalFromCommonFromDataSupply.KResult);
