@@ -52,6 +52,10 @@ let ToMainTag = async ({ inProjectName }) => {
 
     jVarLocalMain.insertAdjacentHTML('beforeend', section10Html);
 
+    const section11 = await fetch(`/${inProjectName}/Page/Templates/section11.html`);
+    const section11Html = await section11.text();
+
+    jVarLocalMain.insertAdjacentHTML('beforeend', section11Html);
 };
 
 export { ToMainTag }

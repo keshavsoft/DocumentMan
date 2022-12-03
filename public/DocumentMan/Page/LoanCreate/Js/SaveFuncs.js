@@ -22,6 +22,7 @@ let FetchPost = async () => {
     let jVarLocalServeyNoTotal = localStorage.getItem("ServeyNoTotal");
     let jVarLocalVillaageId = localStorage.getItem("VillaageId");
     let jVarLocalLaNo = localStorage.getItem("LaNo");
+    let jVarLocalPageInput = document.getElementById("Page3").value;
 
     const settings = {
         method: 'POST',
@@ -49,9 +50,8 @@ let FetchPost = async () => {
             ServeyNo4: jVarLocalServeyNo4,
             ServeyNoTotal: jVarLocalServeyNoTotal,
             VillaageId: jVarLocalVillaageId,
-            LaNo:jVarLocalLaNo
-
-
+            LaNo: jVarLocalLaNo,
+            Page3: jVarLocalPageInput
         })
     };
 
