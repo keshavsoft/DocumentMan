@@ -57,16 +57,20 @@ let StartFunc = async () => {
     let jVarLocalPage3 = document.getElementsByClassName("Page3");
     for (let i = 0; i < jVarLocalPage3.length; i++) {
         jVarLocalPage3[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
 
-            document.location = `../Page3/Page3.html`
+            document.location = `../Page3/Page3.html?LoanNumber=${jvarFileName}`;
         })
     };
 
     let jVarLocalPage4 = document.getElementsByClassName("Page4");
     for (let i = 0; i < jVarLocalPage4.length; i++) {
         jVarLocalPage4[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
 
-            document.location = `../Page4/Page4.html`
+            document.location = `../Page4/Page4.html?LoanNumber=${jvarFileName}`
         })
     };
 
