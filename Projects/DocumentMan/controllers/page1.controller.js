@@ -15,17 +15,18 @@ let CreatePage = async (req, res) => {
 };
 
 let UpdateDocumentDetails = async (req, res) => {
-    let LocalBody = req.body;
+    let LocalUpdateBody = req.body;
+    console.log("LocalBody---",LocalUpdateBody);
 
-    let LocalFromDataSupply = await CommonToDataFolderFromInput.StartFunc({
-        inFolderName: "Loans",
-        inFileNameWithExtension: req.params.inLoanRef,
-        inItemName: "DocumentsInfo",
-        inDataPK: 2051,
-        inData: LocalBody
-    });
+    // let LocalFromDataSupply = await CommonToDataFolderFromInput.StartFunc({
+    //     inFolderName: "Loans",
+    //     inFileNameWithExtension: req.params.inLoanRef,
+    //     inItemName: "DocumentsInfo",
+    //     inDataPK: 2051,
+    //     inData: LocalBody
+    // });
 
-    res.json(LocalFromDataSupply);
+    // res.json(LocalFromDataSupply);
 };
 
 module.exports = {
