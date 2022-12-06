@@ -4,8 +4,7 @@ import {
     jFClickPurposeId, jFClickPurposeId1,
     jFClickPurposeId2, jFClickPurposeId3,
     jFClickServeyVillaageId, jFClickLandId,
-    jFClickName3Id, jFClickLANo
-} from "./ClickFuncs.js";
+    jFClickName3Id, jFClickLANo} from "./ClickFuncs.js";
 import { FetchPost as SaveFuncsFetchPost } from "./SaveFuncs.js";
 
 

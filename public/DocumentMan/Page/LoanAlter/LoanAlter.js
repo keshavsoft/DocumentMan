@@ -3,6 +3,7 @@ import { FetchPost as JsonDataToLocalStorage } from "./Js/PullData.js";
 import { jFShowToDOM as LocalStorageToDom } from "./Js/ShowData.js";
 import { ToMainTag as HtmlTemplatesToDom } from "./Js/StartFuncs/ToDom.js";
 import { ShowInDom as ExtentsShowInDom } from "../../Extents/Js/ToDom/FillTable.js";
+import { jFAddListeners } from "./Js/AddListeners.js";
 
 HtmlTemplatesToDom().then(() => {
     let jVarLocalLoanNumber = ReturnLoanNumber();
@@ -16,6 +17,8 @@ HtmlTemplatesToDom().then(() => {
             });
         });
     };
+    jFAddListeners();
+
 });
 
 let jFShowExtentTotal = () => {
@@ -34,5 +37,6 @@ let jFShowExtentTotal = () => {
 
     jVarLocalExtentTotalId.innerHTML = sumVal;
 };
+
 
 

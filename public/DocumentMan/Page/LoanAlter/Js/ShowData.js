@@ -1,7 +1,6 @@
 let jFShowToDOM = () => {
 
     jFShowToDOMNameOfDate();
-
     jFShowToDOMNameOfBranchId();
     jFShowToDOMNameOfPACA();
     jFShowToDOMNameOfNumberId();
@@ -12,15 +11,13 @@ let jFShowToDOM = () => {
     jFShowToDOMNameOfName3Id();
     jFShowToDOMNameOfLandId();
     jFShowToDOMNameOfLaNo();
-    // jFShowToDOMNameOfVillageId();
-    // jFShowToDOMNameOfName2Id();
-    //   jFShowToDOMNameOfName1();
-    // jFShowToDOMNameOfServeyNo1();
-    // jFShowToDOMNameOfServeyNo2();
-    // jFShowToDOMNameOfServeyNo3();
-    // jFShowToDOMNameOfServeyNo4();
-    // jFShowToDOMNameOfServeyNoTotal();
     jFShowToDOMNameOfVillaageId();
+    jFShowToDomPage();
+    jFShowToDomSecondRow();
+    jFShowToDomPage3EnlistedDocuments();
+    jFShowToDomPage3Amout();
+    jFShowToDomPage3Minor();
+    jFShowToDomPage3GPA();
 
 };
 
@@ -95,16 +92,7 @@ let jFShowToDOMNameOfVillageId = () => {
     jVarLocalVillage.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
 
 };
-// let jFShowToDOMNameOfName2Id = () => {
-//     let jVarLocalKey = "Name2Id";
-//     let jVarLocalName2Id = document.getElementById("Name2Id");
 
-//     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-//     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
-
-//     jVarLocalName2Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
-
-// };
 let jFShowToDOMNameOfLandId = () => {
     let jVarLocalKey = "Land";
     let jVarLocalLand = document.getElementById("LandId");
@@ -151,8 +139,6 @@ let jFShowToDOMNameOfName3Id = () => {
     let jVarLocalName2IdValue = document.getElementById("Name2Id");
     let jVarLocalpropertyFavourId = document.getElementById("propertyFavourId");
 
-
-
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
@@ -170,42 +156,7 @@ let jFShowToDOMNameOfLaNo = () => {
 
     jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
 };
-let jFShowToDOMNameOfServeyNo2 = () => {
-    let jVarLocalKey = "ServeyNo2";
-    let jVarLocalName3Id = document.getElementById("ServeyNo2");
 
-    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
-
-    jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
-};
-let jFShowToDOMNameOfServeyNo3 = () => {
-    let jVarLocalKey = "ServeyNo3";
-    let jVarLocalName3Id = document.getElementById("ServeyNo3");
-
-    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
-
-    jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
-};
-let jFShowToDOMNameOfServeyNo4 = () => {
-    let jVarLocalKey = "ServeyNo4";
-    let jVarLocalName3Id = document.getElementById("ServeyNo4");
-
-    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
-
-    jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
-};
-let jFShowToDOMNameOfServeyNoTotal = () => {
-    let jVarLocalKey = "ServeyNoTotal";
-    let jVarLocalName3Id = document.getElementById("ServeyNoTotal");
-
-    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
-    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
-
-    jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
-};
 
 let jFShowToDOMNameOfVillaageId = () => {
     let jVarLocalKey = "VillaageId";
@@ -215,6 +166,78 @@ let jFShowToDOMNameOfVillaageId = () => {
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
     jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
+};
+
+let jFShowToDomPage = ()=>{
+    let jVarLocalKey = "Page3";
+
+    let jVarLocalpage3 = document.getElementById("Page3");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
+};
+
+let jFShowToDomSecondRow = ()=>{
+    let jVarLocalKey = "Page3SecondRow";
+
+    let jVarLocalpage3 = document.getElementById("Page3SecondRow");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
+};
+
+let jFShowToDomPage3EnlistedDocuments = ()=>{
+    let jVarLocalKey = "EnlistedDocuments";
+
+    let jVarLocalpage3 = document.getElementById("Page3EnlistedDocuments");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
+};
+
+let jFShowToDomPage3Amout = ()=>{
+    let jVarLocalKey = "Page3Amout";
+
+    let jVarLocalpage3 = document.getElementById("P3Amout");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
+};
+
+let jFShowToDomPage3Minor = ()=>{
+    let jVarLocalKey = "Page3Minor";
+
+    let jVarLocalpage3 = document.getElementById("P3Minor");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
+};
+
+let jFShowToDomPage3GPA = ()=>{
+    let jVarLocalKey = "Page3GPA";
+
+    let jVarLocalpage3 = document.getElementById("P3GPA");
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+
 };
 
 
