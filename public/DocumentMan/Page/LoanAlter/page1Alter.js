@@ -1,16 +1,15 @@
 import { ReturnLoanNumber } from "../Js/urlSearchParams.js";
-import { FetchPost as PullDataFetchPost } from "../Js/PullData.js";
-import { jFShowToDOM } from "../Js/ShowData.js";
-import { ToMainTag } from "../Js/StartFuncs/ToDom.js";
+import { FetchPost as JsonDataToLocalStorage } from "./Js/PullData.js";
+import { jFShowToDOM as LocalStorageToDom } from "./Js/ShowData.js";
+import { ToMainTag as HtmlTemplatesToDom } from "./Js/StartFuncs/ToDom.js";
 import { ShowInDom as ExtentsShowInDom } from "../../Extents/Js/ToDom/FillTable.js";
 
-
-ToMainTag().then(() => {
+HtmlTemplatesToDom().then(() => {
     let jVarLocalLoanNumber = ReturnLoanNumber();
 
     if (jVarLocalLoanNumber > 0) {
-        PullDataFetchPost({ inLoanNumber: `${jVarLocalLoanNumber}.json` }).then((promisedata) => {
-            // jFShowToDOM();
+        JsonDataToLocalStorage({ inLoanNumber: `${jVarLocalLoanNumber}.json` }).then((promisedata) => {
+            LocalStorageToDom();
 
             ExtentsShowInDom({ inLoanRef: jVarLocalLoanNumber }).then(() => {
                 // jFShowExtentTotal();
