@@ -12,12 +12,14 @@ HtmlTemplatesToDom().then(() => {
         JsonDataToLocalStorage({ inLoanNumber: `${jVarLocalLoanNumber}.json` }).then((promisedata) => {
             LocalStorageToDom();
 
+            jFAddListeners();
+
             ExtentsShowInDom({ inLoanRef: jVarLocalLoanNumber }).then(() => {
                 // jFShowExtentTotal();
             });
         });
+
     };
-    jFAddListeners();
 
 });
 

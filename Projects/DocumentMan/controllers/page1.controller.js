@@ -2,7 +2,7 @@ let CommonToDataFolder = require("../../../DataSupply/Fs/Config/Folders/Files/In
 
 let CreatePage = async (req, res) => {
     let LocalBody = req.body;
-    console.log("--------------",LocalBody);
+    console.log("--------------", LocalBody);
 
     await CommonToDataFolder.StartFunc({
         inFolderName: "Loans",
@@ -15,8 +15,9 @@ let CreatePage = async (req, res) => {
 };
 
 let UpdateDocumentDetails = async (req, res) => {
+    let LocalinLoanNumber = req.params.inLoanNumber;
     let LocalUpdateBody = req.body;
-    console.log("LocalBody---",LocalUpdateBody);
+    console.log("LocalBody---", LocalinLoanNumber);
 
     // let LocalFromDataSupply = await CommonToDataFolderFromInput.StartFunc({
     //     inFolderName: "Loans",
@@ -30,6 +31,6 @@ let UpdateDocumentDetails = async (req, res) => {
 };
 
 module.exports = {
-    CreatePage,UpdateDocumentDetails
+    CreatePage, UpdateDocumentDetails
 };
 

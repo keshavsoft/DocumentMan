@@ -1,5 +1,8 @@
+import { ReturnLoanNumber } from "./urlSearchParams.js";
+
 let FetchPost = async () => {
-    let jVarLocalFetchUrl = "/DocumentMan/Page1/Update";
+    let LocalLoanNumber = ReturnLoanNumber();
+    let jVarLocalFetchUrl = `/DocumentMan/Page1/Update/${LocalLoanNumber}`;
 
     let jVarLocalDate = localStorage.getItem("DocumentDate");
     let jVarLocalData = localStorage.getItem("BranchId");
@@ -66,7 +69,7 @@ let FetchPost = async () => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
-    console.log("response",response);
+    console.log("response", response);
     let data = await response.text();
     //return data;
 };
