@@ -12,6 +12,8 @@ let SaveClickFunc = async (event) => {
         let jVarLocalDocumentNo = document.getElementById("DocumentId").value;
         let jVarLocalDocumentDate = document.getElementById("DocumentDateId").value;
         let jVarLocalNatureDocument = document.getElementById("NatureDocumentId").value;
+        let jVarLocalDiscriptionId = document.getElementById("DiscriptionId").value;
+
         let jVarLocalCopyXerox = document.getElementById("CopyXeroxId").value;
         let jVarLocalPageNo = document.getElementById("PageNoId").value;
 
@@ -21,6 +23,7 @@ let SaveClickFunc = async (event) => {
             DocumentNo: jVarLocalDocumentNo,
             DocumentDate: jVarLocalDocumentDate,
             NatureDocument: jVarLocalNatureDocument,
+            Discription:jVarLocalDiscriptionId,
             CopyXerox: jVarLocalCopyXerox,
             PageNo: jVarLocalPageNo
         };

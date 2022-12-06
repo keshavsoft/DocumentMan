@@ -59,6 +59,25 @@
         
             </datalist>
 
+            <datalist id="documentId">
+                <option>Sale deed </option>
+                <option >Gift deed </option>
+                <option>Parrtition deed </option>
+                <option>Settlement deed </option>
+                <option>Will deed </option>
+                <option>Title deed </option>
+                <option>Encrumbrance Certificate </option>
+                <option>Check Memo </option>
+                <option>Joint field inspection  </option>
+                <option>Loan particular</option>
+                <option>Web land </option>
+                <option>Aadhar</option>
+                <option>Office note</option>
+
+
+        
+            </datalist>
+
             <label class="d-print-none" for="InPutFileName">Loan reference</label>
             <input type="text" class="form-control d-print-none" id="InPutFileName" disabled>
 
@@ -72,9 +91,9 @@
                             <th scope="col">Document No</th>
                             <th scope="col">Document Date</th>
                             <th scope="col">Nature of the Document</th>
+                            <th scope="col">Discription</th>
                             <th scope="col">Original/Copy/Xerox</th>
                             <th scope="col">Page No.</th>
-                            <th scope="col">Insert</th>
                         </tr>
                     </thead>
                     <tbody id="TableBodyId">
@@ -101,13 +120,23 @@
                                         Please Enter DocumentId.
                                     </div>
                             </td>
+                            
                             <td>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control fs-5" autocomplete="off" name="NatureoOftheDocument"
+                                    <input type="text" class="form-control fs-5" list="documentId" autocomplete="off" name="NatureoOftheDocument"
                                         id="NatureDocumentId" aria-describedby="emailHelp" required="" autofocus="">
                                     <div class="invalid-tooltip">
                                         Please Enter DocumentId.
                                     </div>
+                            </td>
+                            <td>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control fs-5" autocomplete="off" name="DocumentNo" id="DiscriptionId"
+                                        aria-describedby="emailHelp" required="" autofocus="">
+                                    <div class="invalid-tooltip">
+                                        Please Enter DocumentId.
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <div class="position-relative">
@@ -125,7 +154,7 @@
                                         Please Enter PageNo.
                                     </div>
                             </td>
-                            <td> <button class="btn btn-primary" type="button" id="save">Insert</button>
+                            <td> <button class="btn btn-success" type="button" id="save">Save</button>
 
                             </td>
                         </tr>
