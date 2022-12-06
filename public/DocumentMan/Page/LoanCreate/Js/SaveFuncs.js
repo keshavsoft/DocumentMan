@@ -24,6 +24,10 @@ let FetchPost = async () => {
     let jVarLocalLaNo = localStorage.getItem("LaNo");
     let jVarLocalPageInput = document.getElementById("Page3").value;
     let jVarLocalPage3SecondRow = document.getElementById("Page3SecondRow").value;
+    let jVarLocalPage3EnlistedDocuments = document.getElementById("Page3EnlistedDocuments").value;
+    let jVarLocalPage3Amout = document.getElementById("P3Amout").value;
+    let jVarLocalPage3Minor = document.getElementById("P3Minor").value;
+    let jVarLocalPage3GPA = document.getElementById("P3GPA").value;
 
     const settings = {
         method: 'POST',
@@ -53,17 +57,17 @@ let FetchPost = async () => {
             VillaageId: jVarLocalVillaageId,
             LaNo: jVarLocalLaNo,
             Page3: jVarLocalPageInput,
-            Page3SecondRow: jVarLocalPage3SecondRow
+            Page3SecondRow: jVarLocalPage3SecondRow,
+            EnlistedDocuments: jVarLocalPage3EnlistedDocuments,
+            Page3Amout: jVarLocalPage3Amout,
+            Page3Minor: jVarLocalPage3Minor,
+            Page3GPA: jVarLocalPage3GPA
         })
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
-    console.log("response", jVarLocalFetchUrl);
     let data = await response.text();
-    console.log("ssssssssss : ", data);
     //return data;
-    console.log("Save-----lll---------");
-
 };
 
 export {

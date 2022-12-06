@@ -11,6 +11,18 @@ let StartFunc = async () => {
         })
     };
 
+    let jVarLocalPage1Alter = document.getElementsByClassName("AlterButtonClass");
+
+    for (let i = 0; i < jVarLocalPage1Alter.length; i++) {
+        jVarLocalPage1Alter[i].addEventListener("click", function (event) {
+            let jVarLocalCurrentTarget = event.currentTarget;
+            let jvarFileName = jVarLocalCurrentTarget.dataset.filename;
+
+            // document.location=`../Page/page1.html?LoanNumber=${jvarFileName}`;
+            document.location = `../Page/LoanAlter/page1Alter.html?LoanNumber=${jvarFileName}`
+        })
+    };
+
     let jVarLocalDocumentClassName = document.getElementsByClassName("ShowDocumentClass");
 
     for (let i = 0; i < jVarLocalDocumentClassName.length; i++) {
