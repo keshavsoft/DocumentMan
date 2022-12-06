@@ -14,7 +14,21 @@ let CreatePage = async (req, res) => {
     res.json({});
 };
 
+let UpdateDocumentDetails = async (req, res) => {
+    let LocalBody = req.body;
+
+    let LocalFromDataSupply = await CommonToDataFolderFromInput.StartFunc({
+        inFolderName: "Loans",
+        inFileNameWithExtension: req.params.inLoanRef,
+        inItemName: "DocumentsInfo",
+        inDataPK: 2051,
+        inData: LocalBody
+    });
+
+    res.json(LocalFromDataSupply);
+};
+
 module.exports = {
-    CreatePage
+    CreatePage,UpdateDocumentDetails
 };
 

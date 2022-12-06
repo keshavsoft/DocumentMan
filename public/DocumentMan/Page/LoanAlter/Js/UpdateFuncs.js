@@ -1,5 +1,5 @@
 let FetchPost = async () => {
-    let jVarLocalFetchUrl = "/DocumentMan/Page1";
+    let jVarLocalFetchUrl = "/DocumentMan/Page1/Update";
 
     let jVarLocalDate = localStorage.getItem("DocumentDate");
     let jVarLocalData = localStorage.getItem("BranchId");
