@@ -30,7 +30,7 @@ let FetchPost = async () => {
     let jVarLocalPage3GPA = document.getElementById("P3GPA").value;
 
     const settings = {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
@@ -66,10 +66,8 @@ let FetchPost = async () => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
+    console.log("response",response);
     let data = await response.text();
-    
-    window.location.replace("/DocumentMan/Loans/Loans.html");
-
     //return data;
 };
 
