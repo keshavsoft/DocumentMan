@@ -18,6 +18,7 @@ let jFShowToDOM = () => {
     jFShowToDomPage3Amout();
     jFShowToDomPage3Minor();
     jFShowToDomPage3GPA();
+    jFShowToDomPage4Execute();
 
 };
 
@@ -168,7 +169,7 @@ let jFShowToDOMNameOfVillaageId = () => {
     jVarLocalName3Id.innerHTML = jVarLocalFromLocalstorageJson[jVarLocalKey];
 };
 
-let jFShowToDomPage = ()=>{
+let jFShowToDomPage = () => {
     let jVarLocalKey = "Page3";
 
     let jVarLocalpage3 = document.getElementById("Page3");
@@ -176,11 +177,11 @@ let jFShowToDomPage = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 
 };
 
-let jFShowToDomSecondRow = ()=>{
+let jFShowToDomSecondRow = () => {
     let jVarLocalKey = "Page3SecondRow";
 
     let jVarLocalpage3 = document.getElementById("Page3SecondRow");
@@ -188,11 +189,11 @@ let jFShowToDomSecondRow = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 
 };
 
-let jFShowToDomPage3EnlistedDocuments = ()=>{
+let jFShowToDomPage3EnlistedDocuments = () => {
     let jVarLocalKey = "EnlistedDocuments";
 
     let jVarLocalpage3 = document.getElementById("Page3EnlistedDocuments");
@@ -200,11 +201,11 @@ let jFShowToDomPage3EnlistedDocuments = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 
 };
 
-let jFShowToDomPage3Amout = ()=>{
+let jFShowToDomPage3Amout = () => {
     let jVarLocalKey = "Page3Amout";
 
     let jVarLocalpage3 = document.getElementById("P3Amout");
@@ -212,11 +213,11 @@ let jFShowToDomPage3Amout = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 
 };
 
-let jFShowToDomPage3Minor = ()=>{
+let jFShowToDomPage3Minor = () => {
     let jVarLocalKey = "Page3Minor";
 
     let jVarLocalpage3 = document.getElementById("P3Minor");
@@ -224,11 +225,11 @@ let jFShowToDomPage3Minor = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 
 };
 
-let jFShowToDomPage3GPA = ()=>{
+let jFShowToDomPage3GPA = () => {
     let jVarLocalKey = "Page3GPA";
 
     let jVarLocalpage3 = document.getElementById("P3GPA");
@@ -236,10 +237,19 @@ let jFShowToDomPage3GPA = ()=>{
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 
-    jVarLocalpage3.value=jVarLocalFromLocalstorageJson[jVarLocalKey]
-
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
 };
 
+let jFShowToDomPage4Execute = () => {
+    let jVarLocalKey = "Page4Execute";
+
+    let jVarLocalpage3 = document.getElementById(jVarLocalKey);
+
+    let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
+    let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
+
+    jVarLocalpage3.value = jVarLocalFromLocalstorageJson[jVarLocalKey]
+};
 
 export {
     jFShowToDOM
