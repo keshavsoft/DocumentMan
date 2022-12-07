@@ -6,7 +6,6 @@ import { FromHbs } from "./Js/ShowTable.js";
 document.addEventListener("DOMContentLoaded", FromHbs);
 
 let jVarLocalLoanNumber = ReturnLoanNumber();
-console.log("jVarLocalLoanNumber--", jVarLocalLoanNumber);
 
 if (jVarLocalLoanNumber > 0) {
     PullDataFetchPost({ inLoanNumber: `${jVarLocalLoanNumber}.json` }).then((promisedata) => {
