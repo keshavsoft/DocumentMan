@@ -1,6 +1,7 @@
 let CommonToDataFolder = require("../../../DataSupply/Fs/Config/Folders/Files/Insert/ToDataFolder/GenerateFileName");
-let CommonToDataFolderToUpdate = require("../../../DataSupply/CommonTableFuncs/MainTable/UpdateFuncs/DataOnly");
+//let CommonToDataFolderToUpdate = require("../../../DataSupply/CommonTableFuncs/MainTable/UpdateFuncs/DataOnly");
 
+let CommonToDataFolderToUpdate = require("../../../DataSupply/CommonTableFuncs/MainTable/UpdateFuncs/ToItemName");
 
 let CreatePage = async (req, res) => {
     let LocalBody = req.body;
@@ -19,7 +20,7 @@ let CreatePage = async (req, res) => {
 let UpdateDocumentDetails = async (req, res) => {
     let LocalinLoanNumber = req.params.inLoanNumber;
     let LocalUpdateBody = req.body;
-    console.log("inFileNameWithExtension",`${LocalinLoanNumber}.json`);
+    console.log("inFileNameWithExtension", `${LocalinLoanNumber}.json`, LocalUpdateBody);
 
     let inJsonConfig = { inFolderName: "Loans", inJsonFileName: `${LocalinLoanNumber}.json` };
     let inItemConfig = { inItemName: "PageInfo" }
@@ -28,7 +29,7 @@ let UpdateDocumentDetails = async (req, res) => {
         inJsonConfig, inItemConfig,
         inUserPK: 2051,
         inPostData: LocalUpdateBody,
-        inRowPK:"BranchId"
+        inRowPK: "BranchId"
     });
 
     res.json(LocalFromDataSupply);

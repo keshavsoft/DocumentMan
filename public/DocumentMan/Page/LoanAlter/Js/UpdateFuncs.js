@@ -69,8 +69,13 @@ let FetchPost = async () => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, settings);
-    console.log("response", response);
-    let data = await response.text();
+
+    let data = await response.json();
+
+    if (data.KTF) {
+      swal.fire("Update successfully...")  
+    };
+
     //return data;
 };
 

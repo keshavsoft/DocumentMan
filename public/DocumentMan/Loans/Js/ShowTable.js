@@ -25,6 +25,7 @@ let StartFunc = async () => {
     let jVarLocalTbody = document.getElementById("TableBodyId");
     let jVarLocalHbas = await FromHbs();
     let jVarLocalData = await FromData();
+    jVarLocalData.sort((f, s) => s - f);
 
     var template = Handlebars.compile(jVarLocalHbas);
 

@@ -15,30 +15,9 @@ HtmlTemplatesToDom().then(() => {
             jFAddListeners();
 
             ExtentsShowInDom({ inLoanRef: jVarLocalLoanNumber }).then(() => {
-                // jFShowExtentTotal();
             });
         });
-
     };
-
 });
-
-let jFShowExtentTotal = () => {
-    let jVarLocalExtentTotalId = document.getElementById("ExtentTotalId");
-    let jVarLocalTableBodyId = document.getElementById("TableBodyForExtentsId");
-
-    let sumVal = 0;
-
-    let tr = jVarLocalTableBodyId.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (var i = 0; i < tr.length; i++) {
-        let td = tr[i].getElementsByTagName("td");
-        sumVal = sumVal + parseFloat(td[3].innerHTML);
-    };
-
-    jVarLocalExtentTotalId.innerHTML = sumVal;
-};
-
 
 
