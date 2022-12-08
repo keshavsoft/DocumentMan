@@ -3,7 +3,7 @@ import {
     jFClickNumberId, jFClickNameId,
     jFClickPurposeId, jFClickPurposeId1,
     jFClickPurposeId2, jFClickPurposeId3,
-    jFClickName1Id,jFClickServeyVillaageId,
+    jFClickServeyVillaageId,
     jFClickName2Id, jFClickVillageId,
     jFClickLandId, jFClickName3Id,
     jFClickServeyNo1, jFClickServeyNo2,
@@ -39,9 +39,6 @@ let jFAddListeners = () => {
     let jVarLocalPurposeId3 = document.getElementById("PurposeId3");
     jVarLocalPurposeId3.addEventListener("click", jFClickPurposeId3);
 
-    // let jVarLocalName1Id = document.getElementById("Name1Id");
-    // jVarLocalName1Id.addEventListener("click", jFClickName1Id);
-
     let jVarLocalName2Id = document.getElementById("Name2Id");
     jVarLocalName2Id.addEventListener("click", jFClickName2Id);
 
@@ -71,8 +68,8 @@ let jFAddListeners = () => {
 
     let jVarLocalVillaageId = document.getElementById("VillaageId");
     jVarLocalVillaageId.addEventListener("click", jFClickServeyVillaageId);
-    
-    
+
+
 
     let jVarLocalSave = document.getElementById("PageSave");
     jVarLocalSave.addEventListener("click", SaveFuncsFetchPost);

@@ -53,10 +53,6 @@ let ToMainTag = async () => {
 
     jVarLocalMain.insertAdjacentHTML('beforeend', section10Html);
 
-
-    //     jVarLocalMain.insertAdjacentElement("afterbegin",
-    // new DOMParser().parseFromString("<div> Hello </div>", "text/html").documentElement);
-
 };
 
 export { ToMainTag }
