@@ -42,6 +42,11 @@ let jFShowToDOM = async () => {
     jFShowToDOMEnlistedDocuments({ inLoanNumber: jVarLocalLoanNumber });
     jFShowToDOMDocumentsInfo({ inLoanNumber: jVarLocalLoanNumber });
     jFShowExtentTotalAcerage({ inLoanNumber: jVarLocalLoanNumber });
+    jFShowPage3Amout({ inLoanNumber: jVarLocalLoanNumber });
+    jFPurposeId({ inLoanNumber: jVarLocalLoanNumber });
+    jFPage3SecondRow({ inLoanNumber: jVarLocalLoanNumber });
+    jFPage3Minor({ inLoanNumber: jVarLocalLoanNumber });
+    jFPage3GPA({ inLoanNumber: jVarLocalLoanNumber });
 
     jVarLocalBranchId.innerHTML = jVarLocalDocumentData.PageInfo.BranchId;
 
@@ -160,6 +165,48 @@ let jFShowExtentTotalAcerage = ({ inLoanNumber }) => {
     jVarLocalExtentTotalId.innerHTML = jVarLocalExtents.reduce((a, b) => a + b, 0)
 };
 
+let jFShowPage3Amout = ({ inLoanNumber }) => {
+    let jVarLocalPage3AmoutId = document.getElementById("Page3AmoutId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalPage3AmoutId.innerHTML = jVarLocalDocumentData.PageInfo.Page3Amout;
+};
+
+let jFPurposeId = ({ inLoanNumber }) => {
+    let jVarLocalPurposeId = document.getElementById("PurposeId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalPurposeId.innerHTML = jVarLocalDocumentData.PageInfo.Purpose;
+    jVarLocalPurposeId.innerHTML += `, ${jVarLocalDocumentData.PageInfo.Purpose1}`;
+    jVarLocalPurposeId.innerHTML += `, ${jVarLocalDocumentData.PageInfo.Purpose2}`;
+    jVarLocalPurposeId.innerHTML += `, ${jVarLocalDocumentData.PageInfo.Purpose3}`;
+};
+
+let jFPage3SecondRow = ({ inLoanNumber }) => {
+    let jVarLocalPage3SecondRowId = document.getElementById("Page3SecondRowId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalPage3SecondRowId.innerHTML = jVarLocalDocumentData.PageInfo.Page3SecondRow;
+};
+
+let jFPage3Minor = ({ inLoanNumber }) => {
+    let jVarLocalPage3MinorId = document.getElementById("Page3MinorId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalPage3MinorId.innerHTML = jVarLocalDocumentData.PageInfo.Page3Minor;
+};
+
+let jFPage3GPA = ({ inLoanNumber }) => {
+    let jVarLocalPage3GPAId = document.getElementById("Page3GPAId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalPage3GPAId.innerHTML = jVarLocalDocumentData.PageInfo.Page3GPA;
+};
 export {
     jFShowToDOM
 };
