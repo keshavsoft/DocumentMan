@@ -31,6 +31,7 @@ let FetchPost = async () => {
     let jVarLocalPage3Amout = document.getElementById("P3Amout").value;
     let jVarLocalPage3Minor = document.getElementById("P3Minor").value;
     let jVarLocalPage3GPA = document.getElementById("P3GPA").value;
+    let jVarLocalPage4Execute = document.getElementById("Page4Execute").value;
 
     const settings = {
         method: 'PATCH',
@@ -64,7 +65,8 @@ let FetchPost = async () => {
             EnlistedDocuments: jVarLocalPage3EnlistedDocuments,
             Page3Amout: jVarLocalPage3Amout,
             Page3Minor: jVarLocalPage3Minor,
-            Page3GPA: jVarLocalPage3GPA
+            Page3GPA: jVarLocalPage3GPA,
+            Page4Execute: jVarLocalPage4Execute
         })
     };
 

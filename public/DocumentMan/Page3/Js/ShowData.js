@@ -6,7 +6,7 @@ let jFShowToDOM = async () => {
     let jVarLocalLoanNumber = ReturnLoanNumber();
     let jVarLocalUserContentId = document.getElementById("UserContentId");
     let jVarLocalPage3SecondRowId = document.getElementById("Page3SecondRowId");
-    let jVarLocalEnlistedId = document.getElementById("EnlistedDocumentsId");
+
     let jVarLocalDocumentsInfoId = document.getElementById("DocumentsInfoId");
     let jVarLocalBranchId = document.getElementById("BranchId");
 
@@ -23,13 +23,12 @@ let jFShowToDOM = async () => {
 
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${jVarLocalLoanNumber}.json`);
     let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
-    console.log("jVarLocalDocumentData : ", jVarLocalDocumentData);
 
-    Object.values(jVarLocalDocumentData.DocumentsInfo).forEach(function (LoopValue) {
-        //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
-        jVarLocalDocumentsInfoId.innerHTML += `${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
-         ${LoopValue.Discription}, `;
-    });
+    // Object.values(jVarLocalDocumentData.DocumentsInfo).forEach(function (LoopValue) {
+    //     //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
+    //     jVarLocalDocumentsInfoId.innerHTML += `${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
+    //      ${LoopValue.Discription}, `;
+    // });
 
 
     // Array.from(jVarLocalName3Id).forEach(element => {
@@ -40,11 +39,43 @@ let jFShowToDOM = async () => {
     jFShowToDOMVillageAccounts({ inLoanNumber: jVarLocalLoanNumber });
     jFShowToDOMEC({ inLoanNumber: jVarLocalLoanNumber });
     jFShowToDOMApplicant({ inLoanNumber: jVarLocalLoanNumber });
+    jFShowToDOMEnlistedDocuments({ inLoanNumber: jVarLocalLoanNumber });
+    jFShowToDOMDocumentsInfo({ inLoanNumber: jVarLocalLoanNumber });
+    jFShowExtentTotalAcerage({ inLoanNumber: jVarLocalLoanNumber });
+
     jVarLocalBranchId.innerHTML = jVarLocalDocumentData.PageInfo.BranchId;
 
     //    jVarLocalBranchId.innerHTML = "aaaaaa";
 
 };
+
+let jFShowToDOMDocumentsInfo = ({ inLoanNumber }) => {
+    let jVarLocalDocumentsInfoId = document.getElementById("DocumentsInfoId");
+
+    //let jVarLocalUserContentId = document.getElementById("UserContentId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+    //jVarLocalDocumentsInfoId.innerHTML = "aaaaaaaa";
+
+    let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
+
+    let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Sale deed" });
+
+    jVarLocalTitleArray.forEach(function (LoopValue) {
+        //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
+        jVarLocalDocumentsInfoId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
+         ${LoopValue.Discription}; `;
+    });
+};
+
+let jFShowToDOMEnlistedDocuments = ({ inLoanNumber }) => {
+    let jVarLocalEnlistedId = document.getElementById("EnlistedDocumentsId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    jVarLocalEnlistedId.innerHTML = jVarLocalDocumentData.PageInfo.EnlistedDocuments;
+};
+
 
 let jFShowToDOMApplicant = ({ inLoanNumber }) => {
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
@@ -57,14 +88,13 @@ let jFShowToDOMApplicant = ({ inLoanNumber }) => {
     });
 };
 
-
 let jFShowToDOMTitleDeed = ({ inLoanNumber }) => {
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
     let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
 
     let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
     let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Title deed" });
-    console.log("jVarLocalDocumentsArray : ", jVarLocalDocumentsArray, jVarLocalTitleArray);
+
     let jVarLocalTitleDeedId = document.getElementById("TitleDeedId");
 
     jVarLocalTitleDeedId.innerHTML = "I have perused";
@@ -85,7 +115,7 @@ let jFShowToDOMVillageAccounts = ({ inLoanNumber }) => {
 
     let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
     let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Village Accounts" });
-    console.log("jVarLocalDocumentsArray : ", jVarLocalDocumentsArray, jVarLocalTitleArray);
+
     let jVarLocalTitleDeedId = document.getElementById("VillageAccountsId");
 
     jVarLocalTitleDeedId.innerHTML = "I have perused";
@@ -118,6 +148,16 @@ let jFShowToDOMEC = ({ inLoanNumber }) => {
     jVarLocalTitleDeedId.innerHTML += " and reveals that there is no subsisting encumbrances over the scheduled property.";
 
     //    jVarLocalTitleDeedId.innerHTML = `I have perused Title deed was issued by Tahasildar,I.Polavaram in favour of applicant is genuine.`;
+};
+
+let jFShowExtentTotalAcerage = ({ inLoanNumber }) => {
+    let jVarLocalExtentTotalId = document.getElementById("AcerageId");
+    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+    let jVarLocalExtents = Object.values(jVarLocalDocumentData.ExtentsInfo).map(p => parseFloat(p.Extents));
+    console.log("jVarLocalExtents : ", jVarLocalExtents);
+    jVarLocalExtentTotalId.innerHTML = jVarLocalExtents.reduce((a, b) => a + b, 0)
 };
 
 export {
