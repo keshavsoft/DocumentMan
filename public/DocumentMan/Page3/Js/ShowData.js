@@ -10,30 +10,10 @@ let jFShowToDOM = async () => {
     let jVarLocalDocumentsInfoId = document.getElementById("DocumentsInfoId");
     let jVarLocalBranchId = document.getElementById("BranchId");
 
-    //await FetchPost({ inLoanNumber: `${jVarLocalLoanNumber}.json` });
     await FetchDocumentDetailsFetchPost({ inLoanNumber: `${jVarLocalLoanNumber}.json` });
-
-    // let jVarLocalDataToShow = localStorage.getItem("Document");
-    // let jVarLocalDataAsJson = JSON.parse(jVarLocalDataToShow);
-
-    // jVarLocalUserContentId.innerHTML = JSON.parse(jVarLocalDataToShow).Page3;
-    // jVarLocalPage3SecondRowId.innerHTML = JSON.parse(jVarLocalDataToShow).Page3SecondRow;
-
-    // jVarLocalEnlistedId.innerHTML = jVarLocalDataAsJson.EnlistedDocuments;
 
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${jVarLocalLoanNumber}.json`);
     let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
-
-    // Object.values(jVarLocalDocumentData.DocumentsInfo).forEach(function (LoopValue) {
-    //     //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
-    //     jVarLocalDocumentsInfoId.innerHTML += `${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
-    //      ${LoopValue.Discription}, `;
-    // });
-
-
-    // Array.from(jVarLocalName3Id).forEach(element => {
-    //     element.innerHTML = jVarLocalDataAsJson.Name3;
-    // });
 
     jFShowToDOMTitleDeed({ inLoanNumber: jVarLocalLoanNumber });
     jFShowToDOMVillageAccounts({ inLoanNumber: jVarLocalLoanNumber });
@@ -54,24 +34,6 @@ let jFShowToDOM = async () => {
 
 };
 
-let jFShowToDOMDocumentsInfo = ({ inLoanNumber }) => {
-    let jVarLocalDocumentsInfoId = document.getElementById("DocumentsInfoId");
-
-    //let jVarLocalUserContentId = document.getElementById("UserContentId");
-    let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
-    let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
-    //jVarLocalDocumentsInfoId.innerHTML = "aaaaaaaa";
-
-    let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
-
-    let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Sale deed" });
-
-    jVarLocalTitleArray.forEach(function (LoopValue) {
-        //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
-        jVarLocalDocumentsInfoId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
-         ${LoopValue.Discription}; `;
-    });
-};
 
 let jFShowToDOMEnlistedDocuments = ({ inLoanNumber }) => {
     let jVarLocalEnlistedId = document.getElementById("EnlistedDocumentsId");
@@ -94,25 +56,83 @@ let jFShowToDOMApplicant = ({ inLoanNumber }) => {
 };
 
 let jFShowToDOMTitleDeed = ({ inLoanNumber }) => {
+    try {
+        let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+        let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+        let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
+        let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Title deed" });
+
+        //console.log("jVarLocalTitleArray : ", jVarLocalTitleArray);
+        let jVarLocalTitleDeedId = document.getElementById("TitleDeedId");
+
+        jVarLocalTitleDeedId.innerHTML = "I have perused";
+
+        jVarLocalTitleArray.forEach(function (LoopValue) {
+            //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
+            jVarLocalTitleDeedId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
+         ${LoopValue.Discription}; `;
+        });
+        jVarLocalTitleDeedId.innerHTML += ` in favour of applicant is genuine.`;
+
+    } catch (error) {
+        console.log("error  : ", error);
+    };
+    //    jVarLocalTitleDeedId.innerHTML = `I have perused Title deed was issued by Tahasildar,I.Polavaram in favour of applicant is genuine.`;
+};
+
+
+let jFShowToDOMDocumentsInfo = ({ inLoanNumber }) => {
+    let jVarLocalDocumentsInfoId = document.getElementById("DocumentsInfoId");
+    let jVarLocalDoumentsArray = ["Sale deed", "Gift deed", "Partition deed", "Settlement deed", "Will deed"];
+
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
     let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
 
     let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
-    let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Title deed" });
 
-    let jVarLocalTitleDeedId = document.getElementById("TitleDeedId");
+    //let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Sale deed" });
+    let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, LoopItem => {
+        console.log("aaaaaaaaaa : ", LoopItem, jVarLocalDoumentsArray.includes(LoopItem.NatureDocument));
 
-    jVarLocalTitleDeedId.innerHTML = "I have perused";
-
+        return jVarLocalDoumentsArray.includes(LoopItem.NatureDocument);
+        //return LoopItem.NatureDocument === "Sale deed";
+    });
+    console.log("jVarLocalTitleArray : ", jVarLocalTitleArray);
     jVarLocalTitleArray.forEach(function (LoopValue) {
         //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
-        jVarLocalTitleDeedId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
+        jVarLocalDocumentsInfoId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
          ${LoopValue.Discription}; `;
     });
-    jVarLocalTitleDeedId.innerHTML += ` in favour of applicant is genuine.`;
-
-    //    jVarLocalTitleDeedId.innerHTML = `I have perused Title deed was issued by Tahasildar,I.Polavaram in favour of applicant is genuine.`;
 };
+
+// let jFShowToDOMDocumentsInfo = ({ inLoanNumber }) => {
+//     try {
+//         let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);
+//         let jVarLocalDocumentData = JSON.parse(jVarLocalDocumentInfoFromLocalStorage);
+
+//         let jVarLocalDocumentsArray = Object.values(jVarLocalDocumentData.DocumentsInfo);
+//         //let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, { 'NatureDocument': "Title deed" });
+//         let jVarLocalTitleArray = _.filter(jVarLocalDocumentsArray, LoopItem => {
+//             return LoopItem.NatureDocument === "Title deed";
+//         });
+//         console.log("jVarLocalTitleArray : ", jVarLocalTitleArray);
+//         let jVarLocalTitleDeedId = document.getElementById("TitleDeedId");
+
+//         jVarLocalTitleDeedId.innerHTML = "I have perused";
+
+//         jVarLocalTitleArray.forEach(function (LoopValue) {
+//             //jVarLocalDocumentsInfoId.innerHTML = JSON.stringify(jVarLocalDocumentData.DocumentsInfo);
+//             jVarLocalTitleDeedId.innerHTML += ` ${LoopValue.NatureDocument} No. : ${LoopValue.DocumentNo},
+//          ${LoopValue.Discription}; `;
+//         });
+//         jVarLocalTitleDeedId.innerHTML += ` in favour of applicant is genuine.`;
+
+//     } catch (error) {
+//         console.log("error  : ", error);
+//     };
+//     //    jVarLocalTitleDeedId.innerHTML = `I have perused Title deed was issued by Tahasildar,I.Polavaram in favour of applicant is genuine.`;
+// };
 
 let jFShowToDOMVillageAccounts = ({ inLoanNumber }) => {
     let jVarLocalDocumentInfoFromLocalStorage = localStorage.getItem(`${inLoanNumber}.json`);

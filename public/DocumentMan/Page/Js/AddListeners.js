@@ -16,7 +16,7 @@ import { FetchPost as SaveFuncsFetchPost } from "./SaveFuncs.js";
 let jFAddListeners = () => {
     let jVarLocalDate = document.getElementById("DateId");
     jVarLocalDate.addEventListener("click", jFClickDate);
-
+    
     let jVarLocalBranchId = document.getElementById("BranchId");
     jVarLocalBranchId.addEventListener("click", jFClickBranchId);
 

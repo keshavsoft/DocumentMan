@@ -19,7 +19,7 @@ let jFShowToDOM = () => {
 let jFShowToDOMNameOfDate = () => {
     let jVarLocalKey = "DocumentDate";
     let jVarLocalDate = document.getElementById("DateId");
-    console.log("jVarLocalDate : ", jVarLocalDate);
+    
     let jVarLocalFromLocalstorage = localStorage.getItem("PageInfo");
     let jVarLocalFromLocalstorageJson = JSON.parse(jVarLocalFromLocalstorage);
 

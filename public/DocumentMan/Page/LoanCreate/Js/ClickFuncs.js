@@ -1,18 +1,20 @@
 let jFClickDate = () => {
     Swal.fire({
         title: 'Enter Date: ',
-        html: `<input type="date" id="Numbersweet" class="swal2-input" value = "2022-11-01" placeholder=" Enter Date "> `,
+        html: `<input type="date" id="Numbersweet" class="swal2-input" placeholder=" Enter Date "> `,
         confirmButtonText: 'Insert',
         focusConfirm: false,
 
         preConfirm: () => {
             const FolderName = Swal.getPopup().querySelector('#Numbersweet').value;
-
-            localStorage.setItem("DocumentDate", `${FolderName}`);
+            var dArr = FolderName.split("-");  // ex input: "2010-01-18"
+            let dateAltered= dArr[2]+ "-" +dArr[1]+ "-" +dArr[0];
+            localStorage.setItem("DocumentDate", `${dateAltered}`);
+            
             let jVarLocalDateFromLocalStroge = localStorage.getItem("DocumentDate");
 
             let jVarLocalDate = document.getElementById("DateId");
-            jVarLocalDate.innerHTML = FolderName;
+            jVarLocalDate.innerHTML = jVarLocalDateFromLocalStroge;
         }
     })
 };
