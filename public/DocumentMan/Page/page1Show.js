@@ -32,7 +32,7 @@ let jFShowExtentTotal = () => {
         sumVal = sumVal + parseFloat(td[3].innerHTML);
     };
 
-    jVarLocalExtentTotalId.innerHTML = sumVal;
+    jVarLocalExtentTotalId.innerHTML = sumVal.toFixed(2);
 };
 
 
