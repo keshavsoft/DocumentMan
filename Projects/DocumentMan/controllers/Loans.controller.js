@@ -1,20 +1,25 @@
 let CommonDataSupply = require("../../../DataSupply/Fs/Config/Folders/PullData/FromDataFolder/FilesAsArray")
 
-
 let getLoans = async (req, res) => {
-    let LocalFromCommonFromDataSupply = await CommonDataSupply.StartFunc({
-        inDataPK: 2051,
-        inFolderName: "Loans"
-    });
-
-    if (LocalFromCommonFromDataSupply.KTF === false) {
-      return await  res.end(LocalFromCommonFromDataSupply.KReson)
-    };
-
-    res.json(LocalFromCommonFromDataSupply.KResult);
+  
+  console.log("LocalFromCommonFromDataSupply--aaaaaaaa-");
 
 
-    // console.log("LocalFromCommonFromDataSupply---",LocalFromCommonFromDataSupply);
+  let LocalFromCommonFromDataSupply = await CommonDataSupply.StartFunc({
+    inDataPK: 2051,
+    inFolderName: "Loans"
+  });
+
+  console.log("LocalFromCommonFromDataSupply---", LocalFromCommonFromDataSupply);
+
+  if (LocalFromCommonFromDataSupply.KTF === false) {
+    return await res.end(LocalFromCommonFromDataSupply.KReson)
+  };
+
+  res.json(LocalFromCommonFromDataSupply.KResult);
+
+
+  // console.log("LocalFromCommonFromDataSupply---",LocalFromCommonFromDataSupply);
 
 };
 
